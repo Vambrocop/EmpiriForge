@@ -11,7 +11,8 @@ Core questions:
 - Is treatment timing staggered?
 - Are effects dynamic or heterogeneous?
 - Is anticipation plausible?
-- Are pre-treatment trends informative?
+- Are pre-treatment trends informative and visually credible?
+- Is treatment absorbing, reversible, or repeated?
 
 Diagnostics:
 
@@ -20,16 +21,18 @@ Diagnostics:
 - placebo timing;
 - placebo outcomes;
 - alternative control groups;
+- sensitivity to event window;
 - treatment-specific trends only as sensitivity, not a default fix;
 - clustering at the assignment or policy level.
 
 Reviewer pressure points:
 
-- pre-trend test has low power;
+- pre-trend tests have low power;
 - bad controls affected by treatment;
 - endogenous timing;
 - spillovers;
-- compositional change.
+- compositional change;
+- TWFE weights or forbidden comparisons.
 
 ## IV
 
@@ -37,13 +40,14 @@ Core questions:
 
 - What does the instrument shift?
 - Who are the compliers?
-- Why should the instrument affect outcome only through treatment?
+- Why should the instrument affect the outcome only through treatment?
 - Is monotonicity plausible?
 - Is the first stage strong enough?
+- Is the LATE population relevant to the paper's claim?
 
 Diagnostics:
 
-- first-stage coefficient and F statistic;
+- first-stage coefficient and weak-instrument diagnostics;
 - reduced form;
 - OLS vs 2SLS comparison;
 - weak-IV robust inference;
@@ -66,13 +70,14 @@ Core questions:
 - Can units manipulate the running variable?
 - Is the cutoff locally as-good-as-random?
 - What is the bandwidth?
+- Is the estimand local to the cutoff?
 
 Diagnostics:
 
-- density/manipulation test;
+- density or manipulation test;
 - covariate continuity;
 - bandwidth sensitivity;
-- polynomial order sensitivity;
+- polynomial-order sensitivity;
 - donut RDD;
 - local plots.
 
@@ -91,6 +96,7 @@ Core questions:
 - Is pre-treatment fit strong?
 - Are treated and donor units comparable?
 - Are there spillovers?
+- Were donor exclusions decided before seeing results?
 
 Diagnostics:
 
@@ -114,6 +120,7 @@ Core questions:
 - Is there overlap?
 - Are matching variables pre-treatment?
 - Which estimand is targeted?
+- Are unobservables still plausible?
 
 Diagnostics:
 
@@ -136,12 +143,13 @@ Core questions:
 - Is cross-fitting used?
 - Is there leakage?
 - Is overlap adequate?
+- Are heterogeneity claims pre-specified or exploratory?
 
 Diagnostics:
 
 - sample splitting / cross-fitting;
 - nuisance model performance;
-- overlap and propensity score distribution;
+- overlap and propensity-score distribution;
 - sensitivity across learners;
 - honest inference.
 
@@ -151,4 +159,3 @@ Reviewer pressure points:
 - overfitting;
 - no clear estimand;
 - ML performance confused with causal validity.
-

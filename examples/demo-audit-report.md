@@ -25,7 +25,7 @@ Use empirical-research-forge and econ-identification-skeptic to audit the design
 
 ### Verdict
 
-Promising but not submission-ready. The design has a plausible panel structure, but the current TWFE specification may be vulnerable to staggered-adoption bias, endogenous city adoption, and unclear clustering.
+`needs design repair`. The design has a plausible panel structure, but the current TWFE specification may be vulnerable to staggered-adoption bias, endogenous city adoption, spillovers, and unclear clustering.
 
 ### Research Ledger
 
@@ -34,9 +34,18 @@ Promising but not submission-ready. The design has a plausible panel structure, 
 | Unit | firm-year |
 | Treatment | city-level subsidy adoption |
 | Outcome | firm employment |
+| Estimand | likely ATT for firms exposed to subsidy adoption |
 | Design | staggered DID |
 | Main comparison | firms in treated cities vs firms in not-yet/never-treated cities |
 | Core assumption | untreated employment trends would have evolved similarly |
+
+### Method-Source Alignment
+
+| Decision | Source family | Note |
+|---|---|---|
+| DID design | applied econometrics / causal inference | Needs explicit treatment timing, comparison group, and parallel-trends argument. |
+| Replication package | AEA / DIME-style reproducibility | Needs run order, data provenance, logs, and regenerated table map. |
+| Agent workflow | AI-assisted reproducibility | Audit should separate code run success from identification credibility. |
 
 ### Must-Fix Issues
 
@@ -50,8 +59,8 @@ Promising but not submission-ready. The design has a plausible panel structure, 
 
 | Threat | Diagnostic |
 |---|---|
-| Pre-trends | Event-study plot and joint pre-period test |
-| Endogenous adoption | City-specific trends, matched cities, policy predictors |
+| Pre-trends | Event-study plot and joint pre-period test, interpreted with power limits |
+| Endogenous adoption | Policy predictors, alternative controls, matched cities, timing discussion |
 | Spillovers | Drop neighboring cities or high-commuting zones |
 | Composition | Balanced panel and entry/exit decomposition |
 | Heterogeneous timing | Cohort-specific DID estimator |
@@ -59,4 +68,3 @@ Promising but not submission-ready. The design has a plausible panel structure, 
 ### Suggested Rewrite
 
 The identifying variation comes from within-firm changes in employment around city-level subsidy adoption, relative to firms in cities not yet exposed to the policy. The credibility of this comparison depends on the absence of differential pre-treatment trends and on adoption timing not being driven by unobserved shocks to local labor demand.
-

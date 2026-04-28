@@ -5,6 +5,7 @@
 - Verdict:
 - Main contribution:
 - Main empirical design:
+- Estimand:
 - Strongest evidence:
 - Main risk:
 - Immediate next action:
@@ -18,10 +19,21 @@
 | Outcome | |
 | Treatment/exposure | |
 | Data source | |
+| Data access status | |
+| Estimand | |
 | Identification strategy | |
+| Identifying variation | |
 | Main specification | |
 | Clustering | |
 | Key tables/figures | |
+
+## Method-Source Alignment
+
+| Decision | Source family | Status | Note |
+|---|---|---|---|
+| Identification design | Applied econometrics / causal inference | | |
+| Reproducibility package | AEA / DIME / transparency guidance | | |
+| AI workflow | AI-assisted reproducibility workflow | | |
 
 ## Evidence Map
 
@@ -30,6 +42,10 @@
 | | | | | |
 
 ## Identification Review
+
+### Credibility Verdict
+
+`ready / needs design repair / not causal yet`
 
 ### Assumptions
 
@@ -49,6 +65,18 @@
 
 ### Output Match
 
+### Restricted Data or Environment Barriers
+
+## Transparency Review
+
+### Preregistration or Pre-Analysis Plan
+
+### Deviations
+
+### Data Provenance
+
+### AI Assistance
+
 ## Writing Review
 
 ### Contribution
@@ -64,4 +92,3 @@
 1.
 2.
 3.
-

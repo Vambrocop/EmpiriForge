@@ -2,6 +2,8 @@
 
 本文档把论文中的 agent/skill 思想转化为可复用的 skill 设计草案。重点不是复刻原作者系统，而是提炼出可用于经济学、社会科学和跨学科研究的模块化工作流。
 
+> 项目边界更新：本文档保留早期 brainstorm 记录，其中提到的 `meta-analysis-forge`、二阶 meta 分析和系统性综述方向已经迁移到 companion repository [EvidenceForge](https://github.com/Vambrocop/EvidenceForge)。EmpiriForge 当前聚焦原始实证研究、因果识别、经济学论文写作和复现包。
+
 ## 1. 总体设计原则
 
 一个好 skill 应该像一个小岗位，而不是一段泛泛提示词。
