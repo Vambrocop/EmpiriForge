@@ -1,0 +1,13 @@
+# GitHub Linguist hints
+#
+# EmpiriForge is primarily a documentation and agent-skill workflow repository.
+# These rules keep GitHub's language badge from over-weighting support scripts
+# or rendered/prose artifacts as the repository's "main language".
+
+*.md linguist-documentation
+docs/** linguist-documentation
+examples/** linguist-documentation
+skills/**/SKILL.md linguist-documentation
+skills/**/references/** linguist-documentation
+skills/**/templates/** linguist-documentation
+skills/**/scripts/*.ps1 linguist-documentation
