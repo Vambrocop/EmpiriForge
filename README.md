@@ -52,6 +52,15 @@ EmpiriForge/
       references/
         design-diagnostics.md
         identification-decision-rules.md
+    stata-econometrics-runner/
+      SKILL.md
+      references/
+        stata-replication.md
+        windows-stata.md
+      templates/
+        stata-run-report.md
+      scripts/
+        find-stata.ps1
   docs/
     method-sources.md
     source-crosswalk.md
@@ -74,6 +83,12 @@ Specialized companion skill:
 
 ```text
 econ-identification-skeptic
+```
+
+Stata workflow skill:
+
+```text
+stata-econometrics-runner
 ```
 
 ## Method Grounding
@@ -133,6 +148,7 @@ For Codex:
 ```powershell
 Copy-Item -Recurse ".\skills\empirical-research-forge" "$env:USERPROFILE\.codex\skills\empirical-research-forge"
 Copy-Item -Recurse ".\skills\econ-identification-skeptic" "$env:USERPROFILE\.codex\skills\econ-identification-skeptic"
+Copy-Item -Recurse ".\skills\stata-econometrics-runner" "$env:USERPROFILE\.codex\skills\stata-econometrics-runner"
 ```
 
 For Claude Code:
@@ -140,6 +156,7 @@ For Claude Code:
 ```bash
 cp -r skills/empirical-research-forge ~/.claude/skills/empirical-research-forge
 cp -r skills/econ-identification-skeptic ~/.claude/skills/econ-identification-skeptic
+cp -r skills/stata-econometrics-runner ~/.claude/skills/stata-econometrics-runner
 ```
 
 Then ask your agent:
@@ -148,10 +165,17 @@ Then ask your agent:
 Use empirical-research-forge to audit my DID paper draft and replication package.
 ```
 
+For Stata projects:
+
+```text
+Use stata-econometrics-runner to map this Stata replication package, run the master do-file if Stata is available, and summarize log/output mismatches.
+```
+
 ## Roadmap
 
 - `replication-package-janitor`: prepare and repair reproducibility packages.
 - `causal-diagnostics-runner`: deterministic diagnostics for IV, DID, RDD, and event studies.
+- `stata-econometrics-runner`: Stata `.do`/`.log` workflow for empirical replication. Added.
 - `paper-journalist`: structured writing, contribution framing, and revision response.
 - optional deterministic scripts for table matching, code inventory, and output verification.
 

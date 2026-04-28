@@ -30,6 +30,11 @@ This reading list is intentionally short. EmpiriForge should stay useful as a wo
 - DIME Data Handbook, reproducibility chapter: https://worldbank.github.io/dime-data-handbook/reproducibility.html
 - BITSS Research Transparency and Reproducibility Training: https://www.bitss.org/education/rt2/
 
+## Stata and Agent Workflows
+
+- Stata community corner on AI tools: https://www.stata.com/stata-news/news41-2/community-corner-ai-tools/
+- Claude Code in VS Code for Academic Economists: https://claesbackman.com/claude-code-guide.html
+
 ## Impact Evaluation Practice
 
 - J-PAL Research Resources: https://www.povertyactionlab.org/research-resources

@@ -23,6 +23,11 @@ Use econ-identification-skeptic to audit my IV design.
 Tell me whether the first stage, exclusion restriction, monotonicity, and LATE interpretation are all defensible.
 ```
 
+```text
+Use stata-econometrics-runner to inspect this Stata replication package.
+Find the master do-file, identify dependencies, run it if Stata is available, and summarize errors, warnings, and output mismatches.
+```
+
 ## 中文
 
 ```text
@@ -39,4 +44,8 @@ Tell me whether the first stage, exclusion restriction, monotonicity, and LATE i
 
 ```text
 使用 econ-identification-skeptic 审查我的 IV 设计。请分别判断 first stage、exclusion restriction、monotonicity 和 LATE 解释是否站得住。
+```
+
+```text
+使用 stata-econometrics-runner 检查这个 Stata 复现包。请找到 master do-file，识别依赖包，如果本机 Stata 可运行就执行，并总结 log 错误、警告和输出不匹配。
 ```
