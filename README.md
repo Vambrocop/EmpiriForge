@@ -55,9 +55,11 @@ EmpiriForge/
     stata-econometrics-runner/
       SKILL.md
       references/
+        pdf-docs-and-manuals.md
         stata-replication.md
         windows-stata.md
       templates/
+        empirical-project-context.md
         stata-run-report.md
       scripts/
         find-stata.ps1
@@ -105,6 +107,7 @@ See:
 - [Method Sources](docs/method-sources.md)
 - [Source Crosswalk](docs/source-crosswalk.md)
 - [Reading List](docs/reading-list.md)
+- [Stata Agent Workflow](docs/stata-agent-workflow.md)
 
 The repository does not replace econometrics textbooks, journal policies, or human peer review. Its purpose is to make those standards easier to apply repeatedly.
 

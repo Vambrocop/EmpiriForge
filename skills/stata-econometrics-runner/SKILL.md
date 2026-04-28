@@ -28,6 +28,7 @@ Before running Stata:
 - If Stata is unavailable, review `.do`, `.ado`, `.log`, README, and output files without execution.
 
 For Windows-specific notes, read `references/windows-stata.md`.
+For Stata manuals, codebooks, and large PDF documentation, read `references/pdf-docs-and-manuals.md`.
 
 ## Intake
 
@@ -58,6 +59,7 @@ Create a compact inventory:
 - expected manuscript outputs.
 
 For replication checks, read `references/stata-replication.md`.
+For recurring project setup, use `templates/empirical-project-context.md`.
 
 ### 2. Decide Run vs Review
 
@@ -110,6 +112,10 @@ When the issue is econometric rather than operational, hand off mentally to `emp
 - robustness mapping to threats;
 - interpretation of coefficient magnitudes.
 
+### 6. Treat MCP as Optional Advanced Execution
+
+If the user's environment has a Stata MCP server, use it only after confirming project scope, executable access, and data-safety constraints. MCP can close the loop between command execution and log inspection, but it does not remove the need for reproducibility reports or human review of specifications.
+
 ## Guardrails
 
 - Do not overwrite raw data.
@@ -118,6 +124,8 @@ When the issue is econometric rather than operational, hand off mentally to `emp
 - Do not claim reproduction if only part of the pipeline ran.
 - Do not read huge `.dta` files directly into context; summarize or export samples.
 - Do not treat Stata execution as identification validation.
+- Do not load entire Stata PDF manuals into context when a targeted search or extraction would work.
+- Do not use MCP to make unrestricted changes in a sensitive research folder.
 
 ## Completion
 

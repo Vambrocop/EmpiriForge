@@ -6,7 +6,7 @@ This crosswalk explains how each EmpiriForge skill uses the method sources. It h
 |---|---|---|
 | `empirical-research-forge` | Scaling Reproducibility; applied econometrics; AEA/DIME transparency | Creates the research ledger, routes to references, separates code execution from causal credibility, and produces audit artifacts. |
 | `econ-identification-skeptic` | Angrist and Pischke; Cunningham; Hernan and Robins; Imbens and Rubin | Forces estimand, variation, assumptions, diagnostics, and non-testable threats to be named before writing becomes polished. |
-| `stata-econometrics-runner` | Stata replication practice; AEA/DIME reproducibility; applied econometrics | Maps `.do` files, runs Stata when available, audits logs and outputs, and routes econometric concerns back to identification review. |
+| `stata-econometrics-runner` | Stata replication practice; AEA/DIME reproducibility; applied econometrics; agent workflow setup | Maps `.do` files, runs Stata when available, audits logs and outputs, handles Stata/PDF friction, and routes econometric concerns back to identification review. |
 | `references/economics-workflow.md` | Applied economics paper conventions; impact-evaluation practice | Converts a paper into gates: question, contribution, setting, data, identification, estimation, results, threats, reproducibility. |
 | `references/identification-checklist.md` | DID/IV/RDD/synthetic-control/matching/causal-ML methods | Maps each design to its core assumptions, diagnostics, and reviewer pressure points. |
 | `references/reproducibility-package.md` | AEA Data and Code Policy; DIME Analytics; J-PAL data publication | Defines a minimum replication-package structure, README expectations, restricted-data handling, and output verification. |

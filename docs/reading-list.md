@@ -34,6 +34,7 @@ This reading list is intentionally short. EmpiriForge should stay useful as a wo
 
 - Stata community corner on AI tools: https://www.stata.com/stata-news/news41-2/community-corner-ai-tools/
 - Claude Code in VS Code for Academic Economists: https://claesbackman.com/claude-code-guide.html
+- Stata-focused agent workflows are treated in this repository as execution and reproducibility infrastructure, not as a replacement for identification review.
 
 ## Impact Evaluation Practice
 

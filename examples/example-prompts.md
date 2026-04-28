@@ -49,3 +49,12 @@ Find the master do-file, identify dependencies, run it if Stata is available, an
 ```text
 使用 stata-econometrics-runner 检查这个 Stata 复现包。请找到 master do-file，识别依赖包，如果本机 Stata 可运行就执行，并总结 log 错误、警告和输出不匹配。
 ```
+
+```text
+Use stata-econometrics-runner to create a project context file for this Stata paper.
+Include data paths, do-file order, required packages, table outputs, clustering rules, and the identification strategy.
+```
+
+```text
+使用 stata-econometrics-runner 帮我整理一个 Stata 项目上下文文件，记录数据路径、do-file 顺序、依赖包、表格输出、聚类标准误规则和识别策略。
+```
