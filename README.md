@@ -1,11 +1,45 @@
 # EmpiriForge｜实证研究熔炉
 
-**Agent Skills for empirical research, causal inference, and reproducible economics writing.**  
+**From papers to reproducible agent skills.**  
+**Agent Skills for empirical research, causal inference, meta-analysis, and reproducible scientific writing.**  
 **面向实证研究、因果推断与经济学论文写作的可复现 AI Skills 工作流。**
 
 EmpiriForge turns research experience into reusable agent skills: research questions, literature maps, identification strategies, data workflows, regression tables, robustness checks, reproducibility packages, and reviewer-style audits.
 
 EmpiriForge 的目标不是再写一套“论文写作提示词”，而是把实证研究中的隐性经验锻造成可安装、可审计、可复用的 `SKILL.md` 工作流。
+
+## Quick Demo
+
+EmpiriForge is designed for concrete research audits, not generic writing advice.
+
+```text
+Input:
+  A DID paper draft + regression tables + replication folder
+
+Skill:
+  empirical-research-forge
+
+Output:
+  Research ledger
+  Identification audit
+  Robustness checklist
+  Reproducibility package review
+  Reviewer-style action plan
+```
+
+Example prompt:
+
+```text
+Use empirical-research-forge and econ-identification-skeptic to audit my DID paper.
+Separate code reproducibility from identification credibility.
+```
+
+For evidence synthesis:
+
+```text
+Use meta-analysis-forge to design a systematic review, effect-size coding sheet,
+random-effects meta-analysis, umbrella review layer, and meta-ML extension.
+```
 
 ## Why This Exists
 
@@ -23,25 +57,40 @@ This repository follows the architecture suggested by *Scaling Reproducibility: 
 ```text
 EmpiriForge/
 ├── skills/
-│   └── empirical-research-forge/
+│   ├── empirical-research-forge/
+│   │   ├── SKILL.md
+│   │   ├── references/
+│   │   │   ├── economics-workflow.md
+│   │   │   ├── identification-checklist.md
+│   │   │   └── reproducibility-package.md
+│   │   └── templates/
+│   │       └── research-audit-report.md
+│   ├── econ-identification-skeptic/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   │       └── design-diagnostics.md
+│   └── meta-analysis-forge/
 │       ├── SKILL.md
 │       ├── references/
-│       │   ├── economics-workflow.md
-│       │   ├── identification-checklist.md
-│       │   └── reproducibility-package.md
+│       │   ├── meta-analysis-workflow.md
+│       │   ├── second-order-meta.md
+│       │   └── meta-ml.md
 │       └── templates/
-│           └── research-audit-report.md
+│           └── meta-analysis-protocol.md
 ├── docs/
 │   ├── Scaling_Reproducibility_中文翻译.md
 │   ├── Scaling_Reproducibility_中文解读.md
-│   └── Scaling_Reproducibility_可提炼skills.md
+│   ├── Scaling_Reproducibility_可提炼skills.md
+│   └── Related_Academic_Skills_Ecosystem.md
 └── examples/
-    └── example-prompts.md
+    ├── example-prompts.md
+    ├── demo-audit-report.md
+    └── demo-meta-analysis-plan.md
 ```
 
 ## Core Skill
 
-The first skill is:
+The core skill is:
 
 ```text
 empirical-research-forge
@@ -54,6 +103,11 @@ Use it when you want an AI agent to help with:
 - checking whether claims, tables, and identification assumptions line up;
 - preparing reproducible code/data packages;
 - converting a research process into reusable skills.
+
+Specialized skills:
+
+- `econ-identification-skeptic`: a skeptical identification and robustness reviewer for applied economics papers.
+- `meta-analysis-forge`: systematic review, meta-analysis, second-order meta-analysis, umbrella review, and meta-analysis + machine learning workflow.
 
 ## 中文定位
 
@@ -69,12 +123,16 @@ For Codex:
 
 ```powershell
 Copy-Item -Recurse ".\skills\empirical-research-forge" "$env:USERPROFILE\.codex\skills\empirical-research-forge"
+Copy-Item -Recurse ".\skills\econ-identification-skeptic" "$env:USERPROFILE\.codex\skills\econ-identification-skeptic"
+Copy-Item -Recurse ".\skills\meta-analysis-forge" "$env:USERPROFILE\.codex\skills\meta-analysis-forge"
 ```
 
 For Claude Code:
 
 ```bash
 cp -r skills/empirical-research-forge ~/.claude/skills/empirical-research-forge
+cp -r skills/econ-identification-skeptic ~/.claude/skills/econ-identification-skeptic
+cp -r skills/meta-analysis-forge ~/.claude/skills/meta-analysis-forge
 ```
 
 Then ask your agent:
@@ -83,16 +141,19 @@ Then ask your agent:
 Use empirical-research-forge to audit my DID paper draft and replication package.
 ```
 
+```text
+Use meta-analysis-forge to build a protocol for an umbrella review with second-order meta-analysis and a machine-learning assisted screening workflow.
+```
+
 ## Roadmap
 
-- `econ-identification-skeptic`: identification and robustness reviewer for economics papers.
+- `econ-identification-skeptic`: identification and robustness reviewer for economics papers. Added.
 - `replication-package-janitor`: prepare and repair reproducibility packages.
 - `causal-diagnostics-runner`: deterministic diagnostics for IV, DID, RDD, and event studies.
 - `paper-journalist`: structured writing and audit reports.
-- `meta-analysis-forge`: systematic review, meta-analysis, and second-order meta-analysis workflow.
+- `meta-analysis-forge`: systematic review, meta-analysis, second-order meta-analysis, umbrella review, and meta-ML workflow. Added.
 - `omics-workflow-forge`: genomics, transcriptomics, single-cell, and multi-omics analysis workflow.
 
 ## Status
 
 This is an initial research-skill scaffold inspired by the workflow paper. The first version focuses on process quality and reproducible research discipline. Deterministic analysis scripts can be added later.
-
