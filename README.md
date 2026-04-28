@@ -1,7 +1,7 @@
 # EmpiriForge｜实证研究熔炉
 
 **From papers to reproducible agent skills.**  
-**Agent Skills for empirical research, causal inference, meta-analysis, and reproducible scientific writing.**  
+**Agent Skills for empirical research, causal inference, and reproducible economics writing.**  
 **面向实证研究、因果推断与经济学论文写作的可复现 AI Skills 工作流。**
 
 EmpiriForge turns research experience into reusable agent skills: research questions, literature maps, identification strategies, data workflows, regression tables, robustness checks, reproducibility packages, and reviewer-style audits.
@@ -37,8 +37,8 @@ Separate code reproducibility from identification credibility.
 For evidence synthesis:
 
 ```text
-Use meta-analysis-forge to design a systematic review, effect-size coding sheet,
-random-effects meta-analysis, umbrella review layer, and meta-ML extension.
+Use EvidenceForge for systematic review, meta-analysis, umbrella review,
+second-order meta-analysis, and AI-assisted evidence synthesis.
 ```
 
 ## Why This Exists
@@ -69,14 +69,6 @@ EmpiriForge/
 │   │   ├── SKILL.md
 │   │   └── references/
 │   │       └── design-diagnostics.md
-│   └── meta-analysis-forge/
-│       ├── SKILL.md
-│       ├── references/
-│       │   ├── meta-analysis-workflow.md
-│       │   ├── second-order-meta.md
-│       │   └── meta-ml.md
-│       └── templates/
-│           └── meta-analysis-protocol.md
 ├── docs/
 │   ├── Scaling_Reproducibility_中文翻译.md
 │   ├── Scaling_Reproducibility_中文解读.md
@@ -84,8 +76,7 @@ EmpiriForge/
 │   └── Related_Academic_Skills_Ecosystem.md
 └── examples/
     ├── example-prompts.md
-    ├── demo-audit-report.md
-    └── demo-meta-analysis-plan.md
+    └── demo-audit-report.md
 ```
 
 ## Core Skill
@@ -107,7 +98,8 @@ Use it when you want an AI agent to help with:
 Specialized skills:
 
 - `econ-identification-skeptic`: a skeptical identification and robustness reviewer for applied economics papers.
-- `meta-analysis-forge`: systematic review, meta-analysis, second-order meta-analysis, umbrella review, and meta-analysis + machine learning workflow.
+
+For systematic reviews, meta-analysis, umbrella reviews, second-order meta-analysis, or AI-assisted evidence synthesis, use the companion repository [EvidenceForge](https://github.com/Vambrocop/EvidenceForge).
 
 ## 中文定位
 
@@ -124,7 +116,6 @@ For Codex:
 ```powershell
 Copy-Item -Recurse ".\skills\empirical-research-forge" "$env:USERPROFILE\.codex\skills\empirical-research-forge"
 Copy-Item -Recurse ".\skills\econ-identification-skeptic" "$env:USERPROFILE\.codex\skills\econ-identification-skeptic"
-Copy-Item -Recurse ".\skills\meta-analysis-forge" "$env:USERPROFILE\.codex\skills\meta-analysis-forge"
 ```
 
 For Claude Code:
@@ -132,7 +123,6 @@ For Claude Code:
 ```bash
 cp -r skills/empirical-research-forge ~/.claude/skills/empirical-research-forge
 cp -r skills/econ-identification-skeptic ~/.claude/skills/econ-identification-skeptic
-cp -r skills/meta-analysis-forge ~/.claude/skills/meta-analysis-forge
 ```
 
 Then ask your agent:
@@ -141,9 +131,7 @@ Then ask your agent:
 Use empirical-research-forge to audit my DID paper draft and replication package.
 ```
 
-```text
-Use meta-analysis-forge to build a protocol for an umbrella review with second-order meta-analysis and a machine-learning assisted screening workflow.
-```
+Need evidence synthesis? Use [EvidenceForge](https://github.com/Vambrocop/EvidenceForge).
 
 ## Roadmap
 
@@ -151,8 +139,10 @@ Use meta-analysis-forge to build a protocol for an umbrella review with second-o
 - `replication-package-janitor`: prepare and repair reproducibility packages.
 - `causal-diagnostics-runner`: deterministic diagnostics for IV, DID, RDD, and event studies.
 - `paper-journalist`: structured writing and audit reports.
-- `meta-analysis-forge`: systematic review, meta-analysis, second-order meta-analysis, umbrella review, and meta-ML workflow. Added.
-- `omics-workflow-forge`: genomics, transcriptomics, single-cell, and multi-omics analysis workflow.
+
+Companion project:
+
+- [EvidenceForge](https://github.com/Vambrocop/EvidenceForge): systematic review, meta-analysis, umbrella review, second-order meta-analysis, and AI-assisted evidence synthesis.
 
 ## Status
 
