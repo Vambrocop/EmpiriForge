@@ -22,6 +22,14 @@ This reading list is intentionally short. EmpiriForge should stay useful as a wo
 - Imbens, Guido W., and Donald B. Rubin. *Causal Inference for Statistics, Social, and Biomedical Sciences*.
 - Morgan, Stephen L., and Christopher Winship. *Counterfactuals and Causal Inference*.
 
+## Causal Machine Learning
+
+- Zhao and Liu, *Causal ML: Python package for causal inference machine learning*: https://doi.org/10.1016/j.softx.2022.101294
+- CausalML documentation: https://causalml.readthedocs.io/
+- CausalML GitHub repository: https://github.com/uber/causalml
+- Künzel, Sekhon, Bickel, and Yu, meta-learners for estimating heterogeneous treatment effects.
+- Nie and Wager, quasi-oracle estimation of heterogeneous treatment effects.
+
 ## Reproducibility and Transparency
 
 - AEA Data and Code Availability Policy: https://www.aeaweb.org/journals/data/data-code-policy

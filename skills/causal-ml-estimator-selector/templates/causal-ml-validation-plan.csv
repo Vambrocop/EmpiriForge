@@ -1,0 +1,13 @@
+check_id,required,validation_surface,purpose,artifact,pass_condition,notes
+estimand_named,yes,design,Ensure the target quantity is explicit,design card,ATE ATT CATE ITE LATE or uplift is named,
+feature_timing,yes,design,Prevent post-treatment leakage,feature ledger,All features are pre-treatment or explicitly justified,
+overlap_check,yes,identification,Assess common support,propensity plot or balance table,No severe lack of support in policy-relevant region,
+cross_fitting,conditional,estimation,Reduce overfitting in nuisance models,cross-fitting log,Used for R DR DML-style learners or justified if absent,
+learner_comparison,yes,robustness,Check stability across model classes,comparison table,Effect signs and key rankings are not learner-specific,
+cohort_stability,conditional,robustness,Check effect volatility across cohorts,cohort table,No unexplained extreme cohort swings,
+placebo_treatment,conditional,sensitivity,Detect spurious causal signal,placebo report,Placebo effect near null or explicitly explained,
+placebo_outcome,conditional,sensitivity,Detect unmodeled confounding,placebo report,No strong effect on outcome that should not respond,
+auuc_uplift,conditional,targeting,Validate targeting/ranking use,uplift curve,Out-of-sample uplift improves over random targeting,
+hidden_confounding,yes,sensitivity,Assess unobserved confounding threat,sensitivity memo,Conclusion states how much hidden bias would matter,
+policy_cost,conditional,policy,Prevent treating CATE ranking as welfare,policy calculation,Cost benefit or constraint rule is stated,
+environment_capture,yes,reproducibility,Capture software state,requirements or env file,Package versions and seeds recorded,

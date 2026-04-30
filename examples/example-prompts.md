@@ -24,6 +24,12 @@ Tell me whether the first stage, exclusion restriction, monotonicity, and LATE i
 ```
 
 ```text
+Use causal-ml-estimator-selector to design a CATE workflow for my observational treatment-effect project.
+Compare S-learner, T-learner, X-learner, R-learner, DR-learner, uplift forests, and IV/DRIV options.
+Build a design card, feature-leakage checklist, overlap diagnostics, validation plan, and interpretation guardrails.
+```
+
+```text
 Use stata-econometrics-runner to inspect this Stata replication package.
 Find the master do-file, identify dependencies, run it if Stata is available, and summarize errors, warnings, and output mismatches.
 ```
@@ -44,6 +50,10 @@ Find the master do-file, identify dependencies, run it if Stata is available, an
 
 ```text
 使用 econ-identification-skeptic 审查我的 IV 设计。请分别判断 first stage、exclusion restriction、monotonicity 和 LATE 解释是否站得住。
+```
+
+```text
+使用 causal-ml-estimator-selector 帮我设计一个 CATE/ITE 因果机器学习工作流：先判断 estimand、处理变量、结果变量、特征是否为处理前变量、overlap 是否足够，再比较 S/T/X/R/DR learner、uplift forest 和 IV/DRIV，并给出验证计划和不能过度解释的地方。
 ```
 
 ```text

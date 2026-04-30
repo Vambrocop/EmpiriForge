@@ -144,6 +144,8 @@ Core questions:
 - Is there leakage?
 - Is overlap adequate?
 - Are heterogeneity claims pre-specified or exploratory?
+- Is the target estimand `ATE`, `ATT`, `CATE`, `ITE`, `LATE`, or uplift?
+- Is the chosen estimator family aligned with the assignment mechanism?
 
 Diagnostics:
 
@@ -152,6 +154,9 @@ Diagnostics:
 - overlap and propensity-score distribution;
 - sensitivity across learners;
 - honest inference.
+- placebo treatment/outcome checks where appropriate;
+- AUUC or uplift curves when the use case is targeting;
+- hidden-confounding sensitivity analysis.
 
 Reviewer pressure points:
 
@@ -159,3 +164,5 @@ Reviewer pressure points:
 - overfitting;
 - no clear estimand;
 - ML performance confused with causal validity.
+- post-treatment feature leakage;
+- treatment targeting without cost, capacity, or fairness analysis.

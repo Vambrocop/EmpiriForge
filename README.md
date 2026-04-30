@@ -15,6 +15,7 @@ Use it for:
 
 - empirical economics paper planning and revision;
 - DID, IV, RDD, event-study, panel FE, synthetic-control, matching, and causal ML design review;
+- CATE/ITE/uplift estimation planning and causal-ML validation;
 - separating identification credibility from code reproducibility;
 - building replication packages and pre-submission audits;
 - turning repeated research routines into reusable agent skills.
@@ -52,6 +53,13 @@ EmpiriForge/
       references/
         design-diagnostics.md
         identification-decision-rules.md
+    causal-ml-estimator-selector/
+      SKILL.md
+      references/
+        causal-ml-toolkit.md
+      templates/
+        causal-ml-design-card.md
+        causal-ml-validation-plan.csv
     stata-econometrics-runner/
       SKILL.md
       references/
@@ -85,6 +93,12 @@ Specialized companion skill:
 
 ```text
 econ-identification-skeptic
+```
+
+Specialized causal-ML skill:
+
+```text
+causal-ml-estimator-selector
 ```
 
 Stata workflow skill:
@@ -151,6 +165,7 @@ For Codex:
 ```powershell
 Copy-Item -Recurse ".\skills\empirical-research-forge" "$env:USERPROFILE\.codex\skills\empirical-research-forge"
 Copy-Item -Recurse ".\skills\econ-identification-skeptic" "$env:USERPROFILE\.codex\skills\econ-identification-skeptic"
+Copy-Item -Recurse ".\skills\causal-ml-estimator-selector" "$env:USERPROFILE\.codex\skills\causal-ml-estimator-selector"
 Copy-Item -Recurse ".\skills\stata-econometrics-runner" "$env:USERPROFILE\.codex\skills\stata-econometrics-runner"
 ```
 
@@ -159,6 +174,7 @@ For Claude Code:
 ```bash
 cp -r skills/empirical-research-forge ~/.claude/skills/empirical-research-forge
 cp -r skills/econ-identification-skeptic ~/.claude/skills/econ-identification-skeptic
+cp -r skills/causal-ml-estimator-selector ~/.claude/skills/causal-ml-estimator-selector
 cp -r skills/stata-econometrics-runner ~/.claude/skills/stata-econometrics-runner
 ```
 
@@ -174,10 +190,17 @@ For Stata projects:
 Use stata-econometrics-runner to map this Stata replication package, run the master do-file if Stata is available, and summarize log/output mismatches.
 ```
 
+For causal ML projects:
+
+```text
+Use causal-ml-estimator-selector to choose between S/T/X/R/DR learners, uplift forests, and IV-style estimators for my treatment-effect project. Build a design card and validation plan.
+```
+
 ## Roadmap
 
 - `replication-package-janitor`: prepare and repair reproducibility packages.
 - `causal-diagnostics-runner`: deterministic diagnostics for IV, DID, RDD, and event studies.
+- `causal-ml-estimator-selector`: CATE/ITE/uplift estimator choice and validation workflow. Added.
 - `stata-econometrics-runner`: Stata `.do`/`.log` workflow for empirical replication. Added.
 - `paper-journalist`: structured writing, contribution framing, and revision response.
 - optional deterministic scripts for table matching, code inventory, and output verification.

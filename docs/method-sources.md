@@ -21,6 +21,21 @@ EmpiriForge is grounded in a practical mix of AI-assisted reproducibility, appli
 - Imbens and Rubin, *Causal Inference for Statistics, Social, and Biomedical Sciences*.
   - Used as a potential-outcomes reference point for experiments, treatment assignment, and estimands.
 
+## Causal Machine Learning
+
+- Zhao and Liu, [*Causal ML: Python package for causal inference machine learning*](https://doi.org/10.1016/j.softx.2022.101294), SoftwareX 21, 101294.
+  - Used as a software-paper anchor for CATE/ITE, uplift modeling, causal sufficiency warnings, and the distinction between causal analysis and estimation.
+- CausalML official documentation and repository.
+  - Documentation: https://causalml.readthedocs.io/
+  - Repository: https://github.com/uber/causalml
+  - Used for current estimator families, validation surfaces, installation/version guardrails, and package-specific caution.
+- Künzel, Sekhon, Bickel, and Yu, meta-learners for heterogeneous treatment effects.
+  - Used as the conceptual anchor for S/T/X/R learner selection.
+- Nie and Wager, R-learner / quasi-oracle estimation of heterogeneous treatment effects.
+  - Used for residualized and cross-fitted CATE estimation logic.
+
+EmpiriForge implication: causal ML should be treated as an identification-sensitive estimation workflow. The agent should choose estimators only after naming the estimand, assignment mechanism, feature timing, overlap, and validation plan.
+
 ## Research Transparency and Replication Packages
 
 - AEA Data and Code Availability Policy.
@@ -51,6 +66,7 @@ EmpiriForge is grounded in a practical mix of AI-assisted reproducibility, appli
 EmpiriForge uses sources as guardrails, not as decorative citations. When a skill produces an audit, it should connect each recommendation to a method family:
 
 - identification critique: econometrics and causal inference;
+- causal-ML critique: estimator family, overlap, cross-fitting, leakage, heterogeneity stability, and sensitivity analysis;
 - reproducibility critique: AEA, DIME, BITSS, J-PAL style transparency expectations;
 - AI workflow critique: skill routing, logs, deterministic execution, and human oversight from the reproducibility workflow paper.
 

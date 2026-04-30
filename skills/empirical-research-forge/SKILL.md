@@ -64,6 +64,7 @@ Load only the reference needed for the task:
 
 - For full empirical paper workflows, read `references/economics-workflow.md`.
 - For DID, IV, RDD, event studies, panel FE, matching, synthetic control, or causal ML, read `references/identification-checklist.md`.
+- For causal ML estimator choice, heterogeneous treatment effects, uplift, or Python causal-inference packages, use the companion skill `causal-ml-estimator-selector`.
 - For method-source grounding, read `references/method-source-map.md`.
 - For replication packages, reproducibility reports, or submission preparation, read `references/reproducibility-package.md`.
 - For preregistration, deviations, data provenance, AI-use disclosure, or open-science issues, read `references/research-transparency.md`.
