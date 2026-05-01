@@ -16,6 +16,7 @@ Use it for:
 - empirical economics paper planning and revision;
 - DID, IV, RDD, event-study, panel FE, synthetic-control, matching, and causal ML design review;
 - CATE/ITE/uplift estimation planning and causal-ML validation;
+- publication-ready R figures, journal visualization standards, and reviewer-proof figure audits;
 - separating identification credibility from code reproducibility;
 - building replication packages and pre-submission audits;
 - turning repeated research routines into reusable agent skills.
@@ -60,6 +61,16 @@ EmpiriForge/
       templates/
         causal-ml-design-card.md
         causal-ml-validation-plan.csv
+    publication-figure-forge/
+      SKILL.md
+      references/
+        figure-type-playbook.md
+        journal-figure-standards.md
+      templates/
+        costar-figure-prompt.md
+        figure-review-checklist.md
+      scripts/
+        publication_theme.R
     stata-econometrics-runner/
       SKILL.md
       references/
@@ -99,6 +110,12 @@ Specialized causal-ML skill:
 
 ```text
 causal-ml-estimator-selector
+```
+
+Publication-figure skill:
+
+```text
+publication-figure-forge
 ```
 
 Stata workflow skill:
@@ -166,6 +183,7 @@ For Codex:
 Copy-Item -Recurse ".\skills\empirical-research-forge" "$env:USERPROFILE\.codex\skills\empirical-research-forge"
 Copy-Item -Recurse ".\skills\econ-identification-skeptic" "$env:USERPROFILE\.codex\skills\econ-identification-skeptic"
 Copy-Item -Recurse ".\skills\causal-ml-estimator-selector" "$env:USERPROFILE\.codex\skills\causal-ml-estimator-selector"
+Copy-Item -Recurse ".\skills\publication-figure-forge" "$env:USERPROFILE\.codex\skills\publication-figure-forge"
 Copy-Item -Recurse ".\skills\stata-econometrics-runner" "$env:USERPROFILE\.codex\skills\stata-econometrics-runner"
 ```
 
@@ -175,6 +193,7 @@ For Claude Code:
 cp -r skills/empirical-research-forge ~/.claude/skills/empirical-research-forge
 cp -r skills/econ-identification-skeptic ~/.claude/skills/econ-identification-skeptic
 cp -r skills/causal-ml-estimator-selector ~/.claude/skills/causal-ml-estimator-selector
+cp -r skills/publication-figure-forge ~/.claude/skills/publication-figure-forge
 cp -r skills/stata-econometrics-runner ~/.claude/skills/stata-econometrics-runner
 ```
 
@@ -196,6 +215,12 @@ For causal ML projects:
 Use causal-ml-estimator-selector to choose between S/T/X/R/DR learners, uplift forests, and IV-style estimators for my treatment-effect project. Build a design card and validation plan.
 ```
 
+For publication figures:
+
+```text
+Use publication-figure-forge to turn this R data frame into a journal-ready scatterplot/boxplot/heatmap/KM curve. Include reviewer-proof checks and export as TIFF 300 DPI.
+```
+
 ## Roadmap
 
 - `replication-package-janitor`: prepare and repair reproducibility packages.
@@ -203,6 +228,7 @@ Use causal-ml-estimator-selector to choose between S/T/X/R/DR learners, uplift f
 - `causal-ml-estimator-selector`: CATE/ITE/uplift estimator choice and validation workflow. Added.
 - `stata-econometrics-runner`: Stata `.do`/`.log` workflow for empirical replication. Added.
 - `paper-journalist`: structured writing, contribution framing, and revision response.
+- `publication-figure-forge`: R/ggplot2 journal-ready visualization workflow. Added.
 - optional deterministic scripts for table matching, code inventory, and output verification.
 
 Companion project:

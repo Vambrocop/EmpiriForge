@@ -36,6 +36,17 @@ EmpiriForge is grounded in a practical mix of AI-assisted reproducibility, appli
 
 EmpiriForge implication: causal ML should be treated as an identification-sensitive estimation workflow. The agent should choose estimators only after naming the estimand, assignment mechanism, feature timing, overlap, and validation plan.
 
+## Scientific Visualization and Publication Figures
+
+- Practical R/ggplot2 publication-figure conventions.
+  - Used for journal-ready figure defaults: Arial/Helvetica, 11 pt text, `theme_classic()`, white background, color-blind safe palettes, axis units, and 300 DPI TIFF/EPS/PDF export.
+- COSTAR-style prompt structure.
+  - Used to make figure-generation requests complete on the first pass: Context, Objective, Style, Tone, Audience, and Response format.
+- Common reviewer and editor figure checks.
+  - Used to prevent frequent failures: low resolution, missing units, wrong font, inaccessible colors, unreadable labels, unexplained p-values, and overclaiming from visual summaries.
+
+EmpiriForge implication: publication graphics are part of reproducible research, not cosmetic decoration. The agent should generate figure code, export settings, and reviewer checks together.
+
 ## Research Transparency and Replication Packages
 
 - AEA Data and Code Availability Policy.

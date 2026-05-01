@@ -44,6 +44,13 @@ This reading list is intentionally short. EmpiriForge should stay useful as a wo
 - Claude Code in VS Code for Academic Economists: https://claesbackman.com/claude-code-guide.html
 - Stata-focused agent workflows are treated in this repository as execution and reproducibility infrastructure, not as a replacement for identification review.
 
+## Scientific Visualization
+
+- ggplot2 documentation: https://ggplot2.tidyverse.org/
+- R Graphics Cookbook: https://r-graphics.org/
+- ColorBrewer palettes: https://colorbrewer2.org/
+- Use these sources as practical references for publication-ready figures, not as substitutes for target-journal instructions.
+
 ## Impact Evaluation Practice
 
 - J-PAL Research Resources: https://www.povertyactionlab.org/research-resources

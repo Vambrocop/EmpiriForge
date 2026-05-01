@@ -30,6 +30,12 @@ Build a design card, feature-leakage checklist, overlap diagnostics, validation 
 ```
 
 ```text
+Use publication-figure-forge to create a journal-ready ggplot2 boxplot from this data frame.
+Use Arial 11 pt, theme_classic, color-blind safe colors, raw jittered points, axis units, and TIFF 300 DPI export.
+Also give me three likely reviewer comments and how the code prevents them.
+```
+
+```text
 Use stata-econometrics-runner to inspect this Stata replication package.
 Find the master do-file, identify dependencies, run it if Stata is available, and summarize errors, warnings, and output mismatches.
 ```
@@ -54,6 +60,10 @@ Find the master do-file, identify dependencies, run it if Stata is available, an
 
 ```text
 使用 causal-ml-estimator-selector 帮我设计一个 CATE/ITE 因果机器学习工作流：先判断 estimand、处理变量、结果变量、特征是否为处理前变量、overlap 是否足够，再比较 S/T/X/R/DR learner、uplift forest 和 IV/DRIV，并给出验证计划和不能过度解释的地方。
+```
+
+```text
+使用 publication-figure-forge 帮我把这个 R 数据框画成投稿级箱线图/散点图/热图/KM 曲线。要求 Arial 11pt、theme_classic、坐标轴带单位、色盲友好配色、图内图例、TIFF 300DPI 导出，并给出审稿人最可能挑的 3 个问题。
 ```
 
 ```text
