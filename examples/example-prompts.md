@@ -3,6 +3,11 @@
 ## English
 
 ```text
+Use academic-paper-pipeline to turn my research idea into a topic-manuscript-delivery plan.
+Create a paper production ledger, route proposal/writing/statistics/figures/delivery to the right skills, and tell me the smallest useful skill stack.
+```
+
+```text
 Use empirical-research-forge to review my empirical economics paper draft.
 Focus on the research question, contribution, estimand, identification strategy,
 tables, robustness checks, method-source alignment, and reproducibility package.
@@ -41,6 +46,10 @@ Find the master do-file, identify dependencies, run it if Stata is available, an
 ```
 
 ## 中文
+
+```text
+使用 academic-paper-pipeline 帮我把论文从选题推进到正文和交付。请生成 paper production ledger，拆成题目、正文、交付三个节点，并告诉我每一步该调用哪个 skill。
+```
 
 ```text
 使用 empirical-research-forge 帮我审查这篇实证经济学论文，重点看研究问题、贡献、estimand、识别策略、数据、回归表、稳健性检验、方法来源对齐和复现包。

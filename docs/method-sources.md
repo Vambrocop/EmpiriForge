@@ -8,6 +8,15 @@ EmpiriForge is grounded in a practical mix of AI-assisted reproducibility, appli
   - Used for the repository architecture: orchestration, reusable skills, deterministic execution, audit trails, and human review.
   - Local notes are in `docs/Scaling_Reproducibility_中文解读.md` and `docs/Scaling_Reproducibility_可提炼skills.md`.
 
+## Academic Paper Skill Stacks
+
+- Practical academic-writing skill-stack workflows.
+  - Used for the topic-manuscript-delivery structure: proposal, architecture, drafting, statistical handoff, figure handoff, and document delivery.
+- External skill repositories such as `luwill/research-skills`, `lishix520/academic-paper-skills`, `K-Dense-AI/claude-scientific-skills`, `K-Dense-AI/claude-scientific-writer`, `kthorn/research-superpower`, `ndpvt-web/latex-document-skill`, and `tfriedel/claude-office-skills`.
+  - Used as ecosystem references, not dependencies. EmpiriForge keeps its own workflow small and routes tasks to internal or local agent tools when available.
+
+EmpiriForge implication: do not overinstall skills. Use one orchestrator, one writing/structure route, one analysis route, one figure route, and one delivery route.
+
 ## Applied Econometrics and Causal Inference
 
 - Angrist and Pischke, *Mostly Harmless Econometrics* and *Mastering 'Metrics*.

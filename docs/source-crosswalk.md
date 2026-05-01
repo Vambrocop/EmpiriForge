@@ -4,6 +4,7 @@ This crosswalk explains how each EmpiriForge skill uses the method sources. It h
 
 | Repository artifact | Main source families | What the source changes in the workflow |
 |---|---|---|
+| `academic-paper-pipeline` | Academic writing skill-stack patterns; reproducible manuscript delivery; EmpiriForge/EvidenceForge routing | Creates the topic-manuscript-delivery ledger and routes proposal, writing, analysis, figures, and delivery tasks to the smallest useful skill stack. |
 | `empirical-research-forge` | Scaling Reproducibility; applied econometrics; AEA/DIME transparency | Creates the research ledger, routes to references, separates code execution from causal credibility, and produces audit artifacts. |
 | `econ-identification-skeptic` | Angrist and Pischke; Cunningham; Hernan and Robins; Imbens and Rubin | Forces estimand, variation, assumptions, diagnostics, and non-testable threats to be named before writing becomes polished. |
 | `causal-ml-estimator-selector` | Potential outcomes; heterogeneous treatment effects; CausalML/causal-inference software docs | Selects S/T/X/R/DR learners, uplift methods, IV-style estimators, and validation plans only after design assumptions, feature timing, overlap, and policy use are explicit. |
@@ -21,6 +22,7 @@ EmpiriForge does not own systematic reviews or meta-analysis. Those live in [Evi
 
 EmpiriForge owns original empirical research workflows:
 
+- "How do I move this paper from idea to manuscript to delivery?"
 - "Can this DID/IV/RDD claim be defended?"
 - "Can this table be regenerated?"
 - "Does the paper's contribution match the evidence?"

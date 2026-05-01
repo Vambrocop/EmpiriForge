@@ -10,6 +10,18 @@ This reading list is intentionally short. EmpiriForge should stay useful as a wo
   - `docs/Scaling_Reproducibility_中文解读.md`
   - `docs/Scaling_Reproducibility_可提炼skills.md`
 
+## Academic Writing Skill Ecosystem
+
+- luwill/research-skills: https://github.com/luwill/research-skills
+- lishix520/academic-paper-skills: https://github.com/lishix520/academic-paper-skills
+- K-Dense-AI/claude-scientific-skills: https://github.com/K-Dense-AI/claude-scientific-skills
+- K-Dense-AI/claude-scientific-writer: https://github.com/K-Dense-AI/claude-scientific-writer
+- kthorn/research-superpower: https://github.com/kthorn/research-superpower
+- ndpvt-web/latex-document-skill: https://github.com/ndpvt-web/latex-document-skill
+- tfriedel/claude-office-skills: https://github.com/tfriedel/claude-office-skills
+
+Use these as ecosystem references. Verify repository structure before installing because third-party skill layouts can change.
+
 ## Applied Econometrics
 
 - Angrist, Joshua D., and Jorn-Steffen Pischke. *Mostly Harmless Econometrics*.

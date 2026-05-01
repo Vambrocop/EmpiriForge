@@ -13,6 +13,7 @@ EmpiriForge focuses on original empirical research, especially applied economics
 
 Use it for:
 
+- academic paper production from topic/proposal to manuscript and delivery;
 - empirical economics paper planning and revision;
 - DID, IV, RDD, event-study, panel FE, synthetic-control, matching, and causal ML design review;
 - CATE/ITE/uplift estimation planning and causal-ML validation;
@@ -39,6 +40,13 @@ This repository is inspired by *Scaling Reproducibility: An AI-Assisted Workflow
 ```text
 EmpiriForge/
   skills/
+    academic-paper-pipeline/
+      SKILL.md
+      references/
+        paper-skill-stack.md
+      templates/
+        paper-production-ledger.md
+        submission-delivery-checklist.md
     empirical-research-forge/
       SKILL.md
       references/
@@ -94,7 +102,13 @@ EmpiriForge/
     demo-audit-report.md
 ```
 
-Core skill:
+Pipeline skill:
+
+```text
+academic-paper-pipeline
+```
+
+Core empirical skill:
 
 ```text
 empirical-research-forge
@@ -181,6 +195,7 @@ For Codex:
 
 ```powershell
 Copy-Item -Recurse ".\skills\empirical-research-forge" "$env:USERPROFILE\.codex\skills\empirical-research-forge"
+Copy-Item -Recurse ".\skills\academic-paper-pipeline" "$env:USERPROFILE\.codex\skills\academic-paper-pipeline"
 Copy-Item -Recurse ".\skills\econ-identification-skeptic" "$env:USERPROFILE\.codex\skills\econ-identification-skeptic"
 Copy-Item -Recurse ".\skills\causal-ml-estimator-selector" "$env:USERPROFILE\.codex\skills\causal-ml-estimator-selector"
 Copy-Item -Recurse ".\skills\publication-figure-forge" "$env:USERPROFILE\.codex\skills\publication-figure-forge"
@@ -191,6 +206,7 @@ For Claude Code:
 
 ```bash
 cp -r skills/empirical-research-forge ~/.claude/skills/empirical-research-forge
+cp -r skills/academic-paper-pipeline ~/.claude/skills/academic-paper-pipeline
 cp -r skills/econ-identification-skeptic ~/.claude/skills/econ-identification-skeptic
 cp -r skills/causal-ml-estimator-selector ~/.claude/skills/causal-ml-estimator-selector
 cp -r skills/publication-figure-forge ~/.claude/skills/publication-figure-forge
@@ -198,6 +214,12 @@ cp -r skills/stata-econometrics-runner ~/.claude/skills/stata-econometrics-runne
 ```
 
 Then ask your agent:
+
+```text
+Use academic-paper-pipeline to move this project from proposal to manuscript and delivery.
+```
+
+For empirical research audits:
 
 ```text
 Use empirical-research-forge to audit my DID paper draft and replication package.
@@ -224,6 +246,7 @@ Use publication-figure-forge to turn this R data frame into a journal-ready scat
 ## Roadmap
 
 - `replication-package-janitor`: prepare and repair reproducibility packages.
+- `academic-paper-pipeline`: topic-manuscript-delivery orchestration. Added.
 - `causal-diagnostics-runner`: deterministic diagnostics for IV, DID, RDD, and event studies.
 - `causal-ml-estimator-selector`: CATE/ITE/uplift estimator choice and validation workflow. Added.
 - `stata-econometrics-runner`: Stata `.do`/`.log` workflow for empirical replication. Added.
