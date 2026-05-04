@@ -17,6 +17,7 @@ Use it for:
 - empirical economics paper planning and revision;
 - DID, IV, RDD, event-study, panel FE, synthetic-control, matching, and causal ML design review;
 - CATE/ITE/uplift estimation planning and causal-ML validation;
+- machine-learning prediction-model papers with tidymodels, random forest, XGBoost, logistic baselines, ROC/AUC, calibration, decision curves, and leakage checks;
 - publication-ready R figures, journal visualization standards, and reviewer-proof figure audits;
 - separating identification credibility from code reproducibility;
 - building replication packages and pre-submission audits;
@@ -69,6 +70,15 @@ EmpiriForge/
       templates/
         causal-ml-design-card.md
         causal-ml-validation-plan.csv
+    prediction-modeling-forge/
+      SKILL.md
+      references/
+        tidymodels-prediction-workflow.md
+      templates/
+        prediction-model-audit.md
+        prediction-model-reporting-checklist.csv
+      scripts/
+        tidymodels_binary_classification_template.R
     publication-figure-forge/
       SKILL.md
       references/
@@ -124,6 +134,12 @@ Specialized causal-ML skill:
 
 ```text
 causal-ml-estimator-selector
+```
+
+Prediction-modeling skill:
+
+```text
+prediction-modeling-forge
 ```
 
 Publication-figure skill:
@@ -198,6 +214,7 @@ Copy-Item -Recurse ".\skills\empirical-research-forge" "$env:USERPROFILE\.codex\
 Copy-Item -Recurse ".\skills\academic-paper-pipeline" "$env:USERPROFILE\.codex\skills\academic-paper-pipeline"
 Copy-Item -Recurse ".\skills\econ-identification-skeptic" "$env:USERPROFILE\.codex\skills\econ-identification-skeptic"
 Copy-Item -Recurse ".\skills\causal-ml-estimator-selector" "$env:USERPROFILE\.codex\skills\causal-ml-estimator-selector"
+Copy-Item -Recurse ".\skills\prediction-modeling-forge" "$env:USERPROFILE\.codex\skills\prediction-modeling-forge"
 Copy-Item -Recurse ".\skills\publication-figure-forge" "$env:USERPROFILE\.codex\skills\publication-figure-forge"
 Copy-Item -Recurse ".\skills\stata-econometrics-runner" "$env:USERPROFILE\.codex\skills\stata-econometrics-runner"
 ```
@@ -209,6 +226,7 @@ cp -r skills/empirical-research-forge ~/.claude/skills/empirical-research-forge
 cp -r skills/academic-paper-pipeline ~/.claude/skills/academic-paper-pipeline
 cp -r skills/econ-identification-skeptic ~/.claude/skills/econ-identification-skeptic
 cp -r skills/causal-ml-estimator-selector ~/.claude/skills/causal-ml-estimator-selector
+cp -r skills/prediction-modeling-forge ~/.claude/skills/prediction-modeling-forge
 cp -r skills/publication-figure-forge ~/.claude/skills/publication-figure-forge
 cp -r skills/stata-econometrics-runner ~/.claude/skills/stata-econometrics-runner
 ```

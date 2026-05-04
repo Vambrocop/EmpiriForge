@@ -1,0 +1,22 @@
+item,required,why_it_matters,manuscript_location
+outcome_definition,yes,Defines what is being predicted,Methods
+positive_class,yes,Prevents metric direction errors,Methods
+sample_size_and_event_count,yes,Shows information available for learning,Methods or Results
+candidate_predictor_timing,yes,Prevents post-outcome leakage,Methods
+missing_data_handling,yes,Imputation can leak information if done before splitting,Methods
+train_test_split,yes,Core validation design,Methods
+stratification_or_grouping,conditional,Needed for imbalance or clustered data,Methods
+cross_validation_inside_training,yes,Separates tuning from final testing,Methods
+hyperparameter_grid,yes,Makes model search reproducible,Methods or Supplement
+baseline_model,yes,Shows whether ML improves on simple approach,Methods and Results
+final_test_evaluation_once,yes,Prevents optimistic model selection,Methods
+auc_or_primary_metric,yes,Discrimination summary,Results
+sensitivity_specificity_ppv_npv,yes,Threshold-dependent usefulness,Results
+calibration,yes,Probability reliability,Results
+decision_curve,conditional,Clinical or operational net-benefit assessment,Results or Supplement
+variable_importance,conditional,Model explanation not mechanism,Results
+external_validation,conditional,Needed for deployment/generalization claims,Methods and Results
+package_versions_or_session_info,yes,Reproducibility,Methods or Supplement
+random_seed,yes,Reproducibility,Methods or Code
+code_and_data_availability,yes,Auditability,Data/code availability
+causal_language_guardrail,yes,Prediction features are not causal effects,Discussion
