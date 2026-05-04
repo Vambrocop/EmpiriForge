@@ -55,12 +55,14 @@ EmpiriForge implication: causal ML should be treated as an identification-sensit
 
 - Practical R/ggplot2 publication-figure conventions.
   - Used for journal-ready figure defaults: Arial/Helvetica, 11 pt text, `theme_classic()`, white background, color-blind safe palettes, axis units, and 300 DPI TIFF/EPS/PDF export.
+- Practical corrplot correlation-matrix workflows.
+  - Used for correlation matrices, correlograms, significance labels, clustering, grayscale alternatives, and p-value/multiple-testing guardrails.
 - COSTAR-style prompt structure.
   - Used to make figure-generation requests complete on the first pass: Context, Objective, Style, Tone, Audience, and Response format.
 - Common reviewer and editor figure checks.
   - Used to prevent frequent failures: low resolution, missing units, wrong font, inaccessible colors, unreadable labels, unexplained p-values, and overclaiming from visual summaries.
 
-EmpiriForge implication: publication graphics are part of reproducible research, not cosmetic decoration. The agent should generate figure code, export settings, and reviewer checks together.
+EmpiriForge implication: publication graphics are part of reproducible research, not cosmetic decoration. The agent should generate figure code, export settings, and reviewer checks together. For correlation plots, the agent must verify orientation, method, missing-value handling, p-value adjustment, and the association-not-causation boundary.
 
 ## Prediction Modeling And Bootstrap Uncertainty
 

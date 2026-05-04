@@ -1,6 +1,6 @@
 ---
 name: publication-figure-forge
-description: Creates and audits publication-ready scientific figures in R. Use for ggplot2, journal figure standards, TIFF/EPS export, COSTAR prompts, scatterplots, boxplots, bar charts, line plots, heatmaps, volcano plots, Kaplan-Meier curves, forest plots, multi-panel figures, clinical figures, omics figures, and reviewer-proof visualization checks.
+description: Creates and audits publication-ready scientific figures in R. Use for ggplot2, corrplot, journal figure standards, TIFF/EPS/PDF export, COSTAR prompts, scatterplots, boxplots, bar charts, line plots, heatmaps, correlation matrices, correlograms, corrplot significance plots, volcano plots, Kaplan-Meier curves, forest plots, multi-panel figures, clinical figures, omics figures, ecology/environment figures, and reviewer-proof visualization checks.
 ---
 
 # Publication Figure Forge
@@ -39,9 +39,12 @@ Load:
 
 - `references/journal-figure-standards.md` for submission defaults and review checks.
 - `references/figure-type-playbook.md` for choosing plot type and expected elements.
+- `references/correlation-plot-playbook.md` for corrplot-based correlation matrices, significance labels, clustering, p-value handling, and nine reusable correlation-plot variants.
 - `templates/costar-figure-prompt.md` when the user wants a prompt for another AI assistant.
+- `templates/correlation-plot-audit.md` when the figure is a correlation matrix or correlogram.
 - `templates/figure-review-checklist.md` before finalizing.
 - `scripts/publication_theme.R` when generating R code.
+- `scripts/corrplot_correlation_template.R` when the user has a tab-delimited matrix and wants reproducible corrplot PDFs.
 
 ## Workflow
 
@@ -54,6 +57,14 @@ Load:
 7. Export with `save_figure()` at 300 DPI or higher.
 8. Check the figure against reviewer failure points.
 9. If combining panels, tag panels with A/B/C and keep sizes consistent.
+
+For correlation matrices, also:
+
+- confirm whether rows are variables or samples before transposing;
+- choose Pearson, Spearman, or Kendall based on the variable scale and distribution;
+- compute p-values only when the sample size and assumptions are defensible;
+- use multiple-testing correction when many correlations are tested;
+- state that correlation is association, not causation.
 
 ## Output Modes
 
@@ -92,6 +103,22 @@ Common reviewer issue:
 Fix:
 ```
 
+### Correlation Plot Plan
+
+```text
+Input orientation:
+Correlation method:
+Missing-value rule:
+P-value method:
+Multiple-testing correction:
+Plot variant:
+Ordering / clustering:
+Palette:
+Significance display:
+Output size and format:
+Interpretation limit:
+```
+
 ## Guardrails
 
 - Do not export final submission figures with the IDE export button.
@@ -102,3 +129,5 @@ Fix:
 - Do not add significance stars without naming the statistical test and correction.
 - Do not hide raw data in group-comparison plots when sample size allows jitter/points.
 - Do not overcrowd volcano or heatmap labels; label rules must be explicit.
+- Do not transpose a correlation matrix input without checking whether rows are features or samples.
+- Do not show unadjusted significance stars across many correlations without explaining multiplicity.

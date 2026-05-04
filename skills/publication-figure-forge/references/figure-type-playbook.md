@@ -59,6 +59,22 @@ Required:
 - annotation legend;
 - readable row/column labels or a label filtering rule.
 
+## Correlation Matrix / Correlogram
+
+Use for pairwise associations among variables, biomarkers, omics features, environmental indicators, model inputs, or exploratory predictors.
+
+Required:
+
+- input orientation: whether rows are variables and columns are samples, or the reverse;
+- correlation method: Pearson, Spearman, or Kendall;
+- missing-value rule such as complete cases or pairwise complete observations;
+- significance method and multiple-testing correction if p-values or stars are shown;
+- ordering rule: original order, AOE, hclust, or ward.D2;
+- display variant: pie, mixed, color, ellipse, coefficient labels, lower triangle, significance labels, grayscale shade, or cluster rectangles;
+- caption warning: correlation does not establish causality.
+
+Use `references/correlation-plot-playbook.md` and `scripts/corrplot_correlation_template.R` for corrplot-based figures.
+
 ## Volcano Plot
 
 Use for differential expression or high-dimensional feature testing.

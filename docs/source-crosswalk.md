@@ -9,7 +9,7 @@ This crosswalk explains how each EmpiriForge skill uses the method sources. It h
 | `econ-identification-skeptic` | Angrist and Pischke; Cunningham; Hernan and Robins; Imbens and Rubin | Forces estimand, variation, assumptions, diagnostics, and non-testable threats to be named before writing becomes polished. |
 | `causal-ml-estimator-selector` | Potential outcomes; heterogeneous treatment effects; CausalML/causal-inference software docs; causal GNNs; perturbation prediction; mechanism identification; causal-invariant prediction boundary cases | Selects S/T/X/R/DR learners, uplift methods, IV-style estimators, causal-GNN audit modes, and validation plans only after design assumptions, graph semantics, feature timing, overlap, and policy or intervention use are explicit; routes stable prediction to `prediction-modeling-forge` unless a treatment effect is actually defined. |
 | `prediction-modeling-forge` | Predictive modeling practice; tidymodels workflows; bootstrap uncertainty; stable carbon-emission forecasting; model-performance validation | Separates training/tuning/test evaluation, reports discrimination and calibration, uses bootstrap only after choosing the correct resampling unit, and requires out-of-environment validation for cross-region, cross-industry, cross-policy, or future-period prediction claims. |
-| `publication-figure-forge` | Scientific visualization practice; journal figure requirements; R/ggplot2 workflows | Turns analysis outputs into submission-ready figures with explicit font, theme, units, color, export, panel, and reviewer-check requirements. |
+| `publication-figure-forge` | Scientific visualization practice; journal figure requirements; R/ggplot2 workflows; corrplot correlation matrices | Turns analysis outputs into submission-ready figures with explicit font, theme, units, color, export, panel, correlation method, p-value correction, and reviewer-check requirements. |
 | `stata-econometrics-runner` | Stata replication practice; AEA/DIME reproducibility; applied econometrics; agent workflow setup | Maps `.do` files, runs Stata when available, audits logs and outputs, handles Stata/PDF friction, and routes econometric concerns back to identification review. |
 | `references/economics-workflow.md` | Applied economics paper conventions; impact-evaluation practice | Converts a paper into gates: question, contribution, setting, data, identification, estimation, results, threats, reproducibility. |
 | `references/identification-checklist.md` | DID/IV/RDD/synthetic-control/matching/causal-ML methods | Maps each design to its core assumptions, diagnostics, and reviewer pressure points. |
@@ -33,6 +33,7 @@ EmpiriForge owns original empirical research workflows:
 - "Which causal-ML estimator family matches this estimand and assignment mechanism?"
 - "Is this causal-GNN paper really estimating interventions, or only using graph structure for robust prediction?"
 - "Can this figure pass basic journal and reviewer checks?"
+- "Can this correlation matrix show associations clearly without overclaiming causality?"
 - "How uncertain is this AUC, prediction, fitted curve, or model-performance metric?"
 - "Will this carbon-emission forecast remain stable under new regions, industries, firms, policy phases, or future periods?"
 

@@ -19,7 +19,7 @@ Use it for:
 - CATE/ITE/uplift estimation planning, causal-GNN audits, graph-based perturbation prediction, and causal-ML validation;
 - machine-learning prediction-model papers with tidymodels, random forest, XGBoost, logistic baselines, stable carbon-emission forecasting, distribution-shift validation, ROC/AUC, calibration, decision curves, and leakage checks;
 - bootstrap uncertainty for standard errors, confidence intervals, prediction bands, AUC intervals, and model-robustness checks;
-- publication-ready R figures, journal visualization standards, and reviewer-proof figure audits;
+- publication-ready R figures, correlation matrices, corrplot correlograms, journal visualization standards, and reviewer-proof figure audits;
 - separating identification credibility from code reproducibility;
 - building replication packages and pre-submission audits;
 - turning repeated research routines into reusable agent skills.
@@ -92,12 +92,15 @@ EmpiriForge/
     publication-figure-forge/
       SKILL.md
       references/
+        correlation-plot-playbook.md
         figure-type-playbook.md
         journal-figure-standards.md
       templates/
+        correlation-plot-audit.md
         costar-figure-prompt.md
         figure-review-checklist.md
       scripts/
+        corrplot_correlation_template.R
         publication_theme.R
     stata-econometrics-runner/
       SKILL.md
@@ -161,6 +164,8 @@ Publication-figure skill:
 ```text
 publication-figure-forge
 ```
+
+It includes a corrplot-based correlation-matrix workflow with nine reusable variants: pie, mixed circle/color, significance labels, ellipse, coefficient labels, lower triangle, circle significance, grayscale shade, and clustered rectangles.
 
 Stata workflow skill:
 
@@ -281,6 +286,12 @@ For publication figures:
 Use publication-figure-forge to turn this R data frame into a journal-ready scatterplot/boxplot/heatmap/KM curve. Include reviewer-proof checks and export as TIFF 300 DPI.
 ```
 
+For correlation matrices:
+
+```text
+Use publication-figure-forge to make a corrplot correlation matrix from input.txt. Check whether rows are features or samples, use Spearman correlation with BH-adjusted p-values, and export a publication-ready PDF.
+```
+
 ## Roadmap
 
 - `replication-package-janitor`: prepare and repair reproducibility packages.
@@ -289,7 +300,7 @@ Use publication-figure-forge to turn this R data frame into a journal-ready scat
 - `causal-ml-estimator-selector`: CATE/ITE/uplift estimator choice, causal-GNN audit, validation workflow, and boundary checks between treatment-effect estimation and causal-invariant prediction. Added.
 - `stata-econometrics-runner`: Stata `.do`/`.log` workflow for empirical replication. Added.
 - `paper-journalist`: structured writing, contribution framing, and revision response.
-- `publication-figure-forge`: R/ggplot2 journal-ready visualization workflow. Added.
+- `publication-figure-forge`: R/ggplot2 and corrplot journal-ready visualization workflow, including correlation matrices and reviewer-proof figure audits. Added.
 - `prediction-modeling-forge`: prediction modeling plus bootstrap uncertainty, stable time-series prediction, and distribution-shift validation for model-performance intervals and fitted-value uncertainty. Added.
 - optional deterministic scripts for table matching, code inventory, and output verification.
 
