@@ -42,8 +42,14 @@ EmpiriForge implication: do not overinstall skills. Use one orchestrator, one wr
   - Used as the conceptual anchor for S/T/X/R learner selection.
 - Nie and Wager, R-learner / quasi-oracle estimation of heterogeneous treatment effects.
   - Used for residualized and cross-fitted CATE estimation logic.
+- Gonzalez et al., [*Combinatorial prediction of therapeutic perturbations using causally inspired neural networks*](https://doi.org/10.1038/s41551-025-01481-x), Nature Biomedical Engineering, 2025.
+  - Used as a causal-GNN anchor for proxy causal graphs, optimal intervention design, inverse perturbation prediction, and leave-context validation.
+- Gao et al., [*LLM Enhancers for GNNs: An Analysis from the Perspective of Causal Mechanism Identification*](https://arxiv.org/abs/2505.08265), ICML 2025 / arXiv:2505.08265.
+  - Used as a causal-mechanism-identification anchor for LLM-enhanced GNNs and interchange intervention analysis.
+- Liu et al., [*Causal Disentangled Graph Neural Network for Fault Diagnosis of Complex Industrial Process*](https://doi.org/10.1109/TII.2024.3452246), IEEE Transactions on Industrial Informatics, 2025.
+  - Used as an industrial causal-disentanglement GNN example for separating robust diagnostic subgraphs from biased or spurious structure.
 
-EmpiriForge implication: causal ML should be treated as an identification-sensitive estimation workflow. The agent should choose estimators only after naming the estimand, assignment mechanism, feature timing, overlap, and validation plan.
+EmpiriForge implication: causal ML should be treated as an identification-sensitive estimation workflow. The agent should choose estimators only after naming the estimand, assignment mechanism, feature timing, overlap, and validation plan. For causal GNNs, graph semantics must be audited first: a graph can be a proxy, prior knowledge, correlation structure, learned structure, or causal graph, and each supports different claims.
 
 ## Scientific Visualization and Publication Figures
 

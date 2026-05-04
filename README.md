@@ -16,7 +16,7 @@ Use it for:
 - academic paper production from topic/proposal to manuscript and delivery;
 - empirical economics paper planning and revision;
 - DID, IV, RDD, event-study, panel FE, synthetic-control, matching, and causal ML design review;
-- CATE/ITE/uplift estimation planning and causal-ML validation;
+- CATE/ITE/uplift estimation planning, causal-GNN audits, graph-based perturbation prediction, and causal-ML validation;
 - machine-learning prediction-model papers with tidymodels, random forest, XGBoost, logistic baselines, stable carbon-emission forecasting, distribution-shift validation, ROC/AUC, calibration, decision curves, and leakage checks;
 - bootstrap uncertainty for standard errors, confidence intervals, prediction bands, AUC intervals, and model-robustness checks;
 - publication-ready R figures, journal visualization standards, and reviewer-proof figure audits;
@@ -67,10 +67,13 @@ EmpiriForge/
     causal-ml-estimator-selector/
       SKILL.md
       references/
+        causal-gnn.md
         causal-ml-toolkit.md
       templates/
+        causal-gnn-audit.md
         causal-ml-design-card.md
         causal-ml-validation-plan.csv
+        graph-causal-validation-schema.csv
     prediction-modeling-forge/
       SKILL.md
       references/
@@ -142,6 +145,8 @@ Specialized causal-ML skill:
 ```text
 causal-ml-estimator-selector
 ```
+
+It also audits causal GNN papers: graph-based therapeutic perturbation prediction, LLM-enhanced GNN mechanism analysis, causal disentangled graphs, and fault-diagnosis causal subgraphs.
 
 Prediction-modeling skill:
 
@@ -264,6 +269,12 @@ For causal ML projects:
 Use causal-ml-estimator-selector to choose between S/T/X/R/DR learners, uplift forests, and IV-style estimators for my treatment-effect project. Build a design card and validation plan.
 ```
 
+For graph-based causal ML:
+
+```text
+Use causal-ml-estimator-selector to audit this causal-GNN paper. Separate graph semantics, intervention claims, proxy-graph assumptions, validation splits, and safe causal wording.
+```
+
 For publication figures:
 
 ```text
@@ -275,7 +286,7 @@ Use publication-figure-forge to turn this R data frame into a journal-ready scat
 - `replication-package-janitor`: prepare and repair reproducibility packages.
 - `academic-paper-pipeline`: topic-manuscript-delivery orchestration. Added.
 - `causal-diagnostics-runner`: deterministic diagnostics for IV, DID, RDD, and event studies.
-- `causal-ml-estimator-selector`: CATE/ITE/uplift estimator choice, validation workflow, and boundary checks between treatment-effect estimation and causal-invariant prediction. Added.
+- `causal-ml-estimator-selector`: CATE/ITE/uplift estimator choice, causal-GNN audit, validation workflow, and boundary checks between treatment-effect estimation and causal-invariant prediction. Added.
 - `stata-econometrics-runner`: Stata `.do`/`.log` workflow for empirical replication. Added.
 - `paper-journalist`: structured writing, contribution framing, and revision response.
 - `publication-figure-forge`: R/ggplot2 journal-ready visualization workflow. Added.

@@ -1,6 +1,6 @@
 ---
 name: causal-ml-estimator-selector
-description: Selects, audits, and explains causal machine learning workflows for heterogeneous treatment effects. Use for CATE, ITE, uplift modeling, S/T/X/R/DR learners, causal forests, matching, propensity scores, IV/DRIV, CEVAE/DragonNet, treatment targeting, policy personalization, Python CausalML/EconML-style projects, validation of causal-ML claims, and boundary checks between treatment-effect estimation and causal-invariant/stable prediction.
+description: Selects, audits, and explains causal machine learning workflows for heterogeneous treatment effects and graph-based causal ML. Use for CATE, ITE, uplift modeling, S/T/X/R/DR learners, causal forests, matching, propensity scores, IV/DRIV, CEVAE/DragonNet, causal GNNs, graph neural networks with causal claims, therapeutic perturbation prediction, optimal intervention design, causal disentangled graphs, LLM-enhanced GNN mechanism identification, fault-diagnosis causal subgraphs, treatment targeting, policy personalization, Python CausalML/EconML-style projects, validation of causal-ML claims, and boundary checks between treatment-effect estimation and causal-invariant/stable prediction.
 ---
 
 # Causal ML Estimator Selector
@@ -30,6 +30,7 @@ Identify:
 - treatment or intervention;
 - outcome;
 - unit of observation;
+- graph object, if present: nodes, edges, edge direction, node states, and graph source;
 - data source: experiment, quasi-experiment, or observational data;
 - treatment timing;
 - available pre-treatment covariates;
@@ -42,7 +43,9 @@ Identify:
 Load:
 
 - `references/causal-ml-toolkit.md` for estimator families, guardrails, and CausalML-specific notes.
+- `references/causal-gnn.md` for graph neural networks with causal, intervention, perturbation, mechanism-identification, or causal-disentanglement claims.
 - `templates/causal-ml-design-card.md` for project setup.
+- `templates/causal-gnn-audit.md` and `templates/graph-causal-validation-schema.csv` for graph-based causal ML studies.
 - `templates/causal-ml-validation-plan.csv` for validation planning.
 
 If the project is about stable prediction under distribution shift rather than treatment-effect estimation, route the main workflow to `prediction-modeling-forge` and keep this skill only for causal-language boundary checks.
@@ -58,11 +61,13 @@ If the project is about stable prediction under distribution shift rather than t
    - doubly robust learners when nuisance models and overlap are central;
    - uplift trees/forests for targeting and segmentation;
    - IV/DRIV when treatment is endogenous and a credible instrument exists;
+   - causal GNNs when graph structure, intervention targets, mechanism discovery, or graph-level domain shift are central;
    - neural methods only when data scale and validation justify them.
 6. Plan cross-fitting or sample splitting when appropriate.
 7. Compare learners and report stability.
 8. Validate with multiple estimates, synthetic/placebo checks, AUUC/uplift curves, and sensitivity analysis.
 9. Translate results as conditional or exploratory unless the identification design is strong.
+10. For graph models, audit whether the graph is a true causal graph, a proxy causal graph, a correlation graph, a PPI/GRN/knowledge graph, or a learned graph.
 
 ## Output Modes
 
@@ -94,6 +99,20 @@ Policy use:
 Must-fix issues:
 ```
 
+### Causal GNN Audit
+
+```text
+Graph source:
+Node state:
+Edge meaning:
+Causal claim:
+Intervention or perturbation:
+Validation split:
+Counterfactual or held-out mechanism test:
+Proxy-graph risk:
+Interpretation limit:
+```
+
 ### Implementation Scaffold
 
 Give package-agnostic pseudocode unless the user asks for a specific library.
@@ -118,3 +137,5 @@ Give package-agnostic pseudocode unless the user asks for a specific library.
 - Do not use causal ML to rescue an unidentified observational design.
 - Do not hide package versions, random seeds, train/test logic, or feature construction.
 - Do not treat causal-invariant or stable predictive features as treatment effects unless the project defines a treatment, estimand, and identification strategy.
+- Do not call a GNN causal because it uses a graph; the edge semantics, intervention target, and validation design must support the claim.
+- Do not treat PPI, GRN, sensor adjacency, or LLM-enhanced node features as a verified causal graph without assumptions and sensitivity checks.
