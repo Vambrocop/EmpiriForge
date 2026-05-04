@@ -17,7 +17,7 @@ Use it for:
 - empirical economics paper planning and revision;
 - DID, IV, RDD, event-study, panel FE, synthetic-control, matching, and causal ML design review;
 - CATE/ITE/uplift estimation planning, causal-GNN audits, graph-based perturbation prediction, and causal-ML validation;
-- machine-learning prediction-model papers with tidymodels, random forest, XGBoost, logistic baselines, stable carbon-emission forecasting, distribution-shift validation, ROC/AUC, calibration, decision curves, and leakage checks;
+- machine-learning prediction-model papers with tidymodels, random forest, XGBoost, logistic baselines, PLS/VIP models, stable carbon-emission forecasting, distribution-shift validation, ROC/AUC, calibration, decision curves, and leakage checks;
 - bootstrap uncertainty for standard errors, confidence intervals, prediction bands, AUC intervals, and model-robustness checks;
 - publication-ready R figures, correlation matrices, corrplot correlograms, journal visualization standards, and reviewer-proof figure audits;
 - separating identification credibility from code reproducibility;
@@ -78,16 +78,19 @@ EmpiriForge/
       SKILL.md
       references/
         bootstrap-uncertainty.md
+        pls-vip-modeling.md
         stable-carbon-emission-forecasting.md
         tidymodels-prediction-workflow.md
       templates/
         bootstrap-uncertainty-audit.md
+        pls-vip-audit.md
         prediction-model-audit.md
         prediction-model-reporting-checklist.csv
         stable-environment-validation-schema.csv
         stable-time-series-prediction-audit.md
       scripts/
         bootstrap_metric_ci.py
+        pls_vip_template.R
         tidymodels_binary_classification_template.R
     publication-figure-forge/
       SKILL.md
@@ -157,7 +160,7 @@ Prediction-modeling skill:
 prediction-modeling-forge
 ```
 
-Bootstrap uncertainty and stable prediction are part of `prediction-modeling-forge`, not separate repositories. Use it when a model paper needs confidence intervals, prediction bands, uncertainty around AUC or fitted values, or cross-region/cross-industry/cross-policy validation for time-series forecasts such as enterprise carbon emissions.
+PLS/VIP, bootstrap uncertainty, and stable prediction are part of `prediction-modeling-forge`, not separate repositories. Use it when a model paper needs small-sample correlated-predictor modeling, VIP ranking, confidence intervals, prediction bands, uncertainty around AUC or fitted values, or cross-region/cross-industry/cross-policy validation for time-series forecasts such as enterprise carbon emissions.
 
 Publication-figure skill:
 

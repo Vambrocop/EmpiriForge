@@ -64,6 +64,13 @@ Use these as ecosystem references. Verify repository structure before installing
 - ColorBrewer palettes: https://colorbrewer2.org/
 - Use these sources as practical references for publication-ready figures, not as substitutes for target-journal instructions.
 
+## Prediction Modeling Utilities
+
+- pls package manual: https://cran.r-project.org/package=pls
+- rchemo VIP documentation: https://search.r-project.org/CRAN/refmans/rchemo/html/vip.html
+
+Use PLS/VIP as a predictive modeling and screening workflow. It is not a replacement for causal identification.
+
 ## Impact Evaluation Practice
 
 - J-PAL Research Resources: https://www.povertyactionlab.org/research-resources
