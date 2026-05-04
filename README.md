@@ -18,6 +18,7 @@ Use it for:
 - DID, IV, RDD, event-study, panel FE, synthetic-control, matching, and causal ML design review;
 - CATE/ITE/uplift estimation planning and causal-ML validation;
 - machine-learning prediction-model papers with tidymodels, random forest, XGBoost, logistic baselines, ROC/AUC, calibration, decision curves, and leakage checks;
+- bootstrap uncertainty for standard errors, confidence intervals, prediction bands, AUC intervals, and model-robustness checks;
 - publication-ready R figures, journal visualization standards, and reviewer-proof figure audits;
 - separating identification credibility from code reproducibility;
 - building replication packages and pre-submission audits;
@@ -73,11 +74,14 @@ EmpiriForge/
     prediction-modeling-forge/
       SKILL.md
       references/
+        bootstrap-uncertainty.md
         tidymodels-prediction-workflow.md
       templates/
+        bootstrap-uncertainty-audit.md
         prediction-model-audit.md
         prediction-model-reporting-checklist.csv
       scripts/
+        bootstrap_metric_ci.py
         tidymodels_binary_classification_template.R
     publication-figure-forge/
       SKILL.md
@@ -141,6 +145,8 @@ Prediction-modeling skill:
 ```text
 prediction-modeling-forge
 ```
+
+Bootstrap uncertainty is part of `prediction-modeling-forge`, not a separate repository. Use it when a model paper needs confidence intervals, prediction bands, or uncertainty around AUC, sensitivity, specificity, PPV, NPV, or fitted values.
 
 Publication-figure skill:
 
@@ -270,6 +276,7 @@ Use publication-figure-forge to turn this R data frame into a journal-ready scat
 - `stata-econometrics-runner`: Stata `.do`/`.log` workflow for empirical replication. Added.
 - `paper-journalist`: structured writing, contribution framing, and revision response.
 - `publication-figure-forge`: R/ggplot2 journal-ready visualization workflow. Added.
+- `prediction-modeling-forge`: prediction modeling plus bootstrap uncertainty for model-performance intervals and fitted-value uncertainty. Added.
 - optional deterministic scripts for table matching, code inventory, and output verification.
 
 Companion project:

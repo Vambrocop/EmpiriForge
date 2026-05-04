@@ -53,11 +53,24 @@
 | Calibration intercept / slope | | | | |
 | Decision-curve net benefit | | | | |
 
+## Uncertainty
+
+Use `bootstrap-uncertainty-audit.md` when intervals are needed.
+
+- Statistics with uncertainty intervals:
+- Bootstrap unit:
+- Bootstrap type:
+- Number of replicates:
+- CI method:
+- Failed replicate count:
+- Metrics reported without intervals:
+
 ## Interpretation
 
 - Best model:
 - Baseline comparison:
 - Calibration:
+- Uncertainty interval:
 - Variable importance:
 - Decision utility:
 - Generalization limit:

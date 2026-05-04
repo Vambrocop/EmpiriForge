@@ -56,6 +56,15 @@ EmpiriForge implication: causal ML should be treated as an identification-sensit
 
 EmpiriForge implication: publication graphics are part of reproducible research, not cosmetic decoration. The agent should generate figure code, export settings, and reviewer checks together.
 
+## Prediction Modeling And Bootstrap Uncertainty
+
+- Practical prediction-modeling workflows using train/test splits, internal resampling, baseline comparators, ROC/AUC, calibration, and decision-curve analysis.
+  - Used for `prediction-modeling-forge`.
+- Bootstrap, jackknife, residual bootstrap, cluster bootstrap, block bootstrap, and percentile/basic/normal/BCa-style interval logic.
+  - Used as an uncertainty layer for coefficients, fitted values, prediction bands, AUC, sensitivity, specificity, PPV, NPV, calibration summaries, and robustness checks.
+
+EmpiriForge implication: bootstrap is not a decoration after modeling. The resampling unit must match the study design, and intervals cannot repair leakage, biased sampling, or a nonrepresentative validation set.
+
 ## Research Transparency and Replication Packages
 
 - AEA Data and Code Availability Policy.
