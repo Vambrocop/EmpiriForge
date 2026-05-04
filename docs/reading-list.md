@@ -19,6 +19,7 @@ This reading list is intentionally short. EmpiriForge should stay useful as a wo
 - kthorn/research-superpower: https://github.com/kthorn/research-superpower
 - ndpvt-web/latex-document-skill: https://github.com/ndpvt-web/latex-document-skill
 - tfriedel/claude-office-skills: https://github.com/tfriedel/claude-office-skills
+- safishamsi/graphify: https://github.com/safishamsi/graphify
 
 Use these as ecosystem references. Verify repository structure before installing because third-party skill layouts can change.
 

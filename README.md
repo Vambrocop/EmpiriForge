@@ -188,8 +188,15 @@ See:
 - [Source Crosswalk](docs/source-crosswalk.md)
 - [Reading List](docs/reading-list.md)
 - [Stata Agent Workflow](docs/stata-agent-workflow.md)
+- [Knowledge Graph Navigation](docs/knowledge-graph-navigation.md)
 
 The repository does not replace econometrics textbooks, journal policies, or human peer review. Its purpose is to make those standards easier to apply repeatedly.
+
+## Optional Knowledge Graph Navigation
+
+Graphify can be used as an optional navigation layer for large empirical projects, replication packages, and notes folders. It helps an agent start from `GRAPH_REPORT.md` and focused graph queries before reading raw files. It does not replace EmpiriForge guardrails for identification, reproducibility, prediction validity, Stata execution, or figure review.
+
+See [Knowledge Graph Navigation](docs/knowledge-graph-navigation.md).
 
 ## Quick Demo
 
