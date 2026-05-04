@@ -93,6 +93,18 @@ Use multiple validation surfaces:
 - Treatment targeting requires a policy objective and cost-benefit rule.
 - Software validity, reproducibility, and causal identification are separate gates.
 
+## Boundary: Stable Prediction Is Not Treatment-Effect Estimation
+
+Some papers use causal-invariance or stable-learning ideas for prediction under distribution shift. For example, enterprise carbon-emission forecasting may try to identify features whose predictive role is stable across regions, industries, firms, or policy phases.
+
+Route these projects to `prediction-modeling-forge` when the main task is forecasting. Use this causal-ML skill only to audit language:
+
+- stable predictive feature does not equal `ATE`, `ATT`, `CATE`, or `ITE`;
+- cross-environment feature stability does not by itself identify an intervention effect;
+- a policy-phase holdout validates robustness to a regime shift, not the causal effect of the policy;
+- feature importance, SHAP, gradient consistency, and mutual-information stability are model or stability diagnostics unless paired with a causal design;
+- treatment-effect language requires a treatment definition, estimand, timing, assumptions, overlap, and sensitivity analysis.
+
 ## Package Notes
 
 As of the official CausalML documentation consulted in 2026, installation is supported through conda, pip, uv, or source. Current documentation states Python 3.11 or later is required, and optional TensorFlow or PyTorch dependencies are needed for `DragonNet` or `CEVAE`.

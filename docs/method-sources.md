@@ -62,8 +62,10 @@ EmpiriForge implication: publication graphics are part of reproducible research,
   - Used for `prediction-modeling-forge`.
 - Bootstrap, jackknife, residual bootstrap, cluster bootstrap, block bootstrap, and percentile/basic/normal/BCa-style interval logic.
   - Used as an uncertainty layer for coefficients, fitted values, prediction bands, AUC, sensitivity, specificity, PPV, NPV, calibration summaries, and robustness checks.
+- Hong, Peng, and Liu, [*Stable Time Series Prediction of Enterprise Carbon Emissions Based on Causal Inference*](https://arxiv.org/abs/2602.00775), arXiv:2602.00775.
+  - Used as a stable-prediction anchor for enterprise carbon-emission forecasting under cross-region, cross-industry, cross-policy, and temporal distribution shift.
 
-EmpiriForge implication: bootstrap is not a decoration after modeling. The resampling unit must match the study design, and intervals cannot repair leakage, biased sampling, or a nonrepresentative validation set.
+EmpiriForge implication: bootstrap is not a decoration after modeling, and stable prediction is not proven by random row splits. The resampling unit and validation environment must match the study design; intervals and causal-stability language cannot repair leakage, biased sampling, or a nonrepresentative validation set.
 
 ## Research Transparency and Replication Packages
 

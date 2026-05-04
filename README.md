@@ -17,7 +17,7 @@ Use it for:
 - empirical economics paper planning and revision;
 - DID, IV, RDD, event-study, panel FE, synthetic-control, matching, and causal ML design review;
 - CATE/ITE/uplift estimation planning and causal-ML validation;
-- machine-learning prediction-model papers with tidymodels, random forest, XGBoost, logistic baselines, ROC/AUC, calibration, decision curves, and leakage checks;
+- machine-learning prediction-model papers with tidymodels, random forest, XGBoost, logistic baselines, stable carbon-emission forecasting, distribution-shift validation, ROC/AUC, calibration, decision curves, and leakage checks;
 - bootstrap uncertainty for standard errors, confidence intervals, prediction bands, AUC intervals, and model-robustness checks;
 - publication-ready R figures, journal visualization standards, and reviewer-proof figure audits;
 - separating identification credibility from code reproducibility;
@@ -75,11 +75,14 @@ EmpiriForge/
       SKILL.md
       references/
         bootstrap-uncertainty.md
+        stable-carbon-emission-forecasting.md
         tidymodels-prediction-workflow.md
       templates/
         bootstrap-uncertainty-audit.md
         prediction-model-audit.md
         prediction-model-reporting-checklist.csv
+        stable-environment-validation-schema.csv
+        stable-time-series-prediction-audit.md
       scripts/
         bootstrap_metric_ci.py
         tidymodels_binary_classification_template.R
@@ -146,7 +149,7 @@ Prediction-modeling skill:
 prediction-modeling-forge
 ```
 
-Bootstrap uncertainty is part of `prediction-modeling-forge`, not a separate repository. Use it when a model paper needs confidence intervals, prediction bands, or uncertainty around AUC, sensitivity, specificity, PPV, NPV, or fitted values.
+Bootstrap uncertainty and stable prediction are part of `prediction-modeling-forge`, not separate repositories. Use it when a model paper needs confidence intervals, prediction bands, uncertainty around AUC or fitted values, or cross-region/cross-industry/cross-policy validation for time-series forecasts such as enterprise carbon emissions.
 
 Publication-figure skill:
 
@@ -272,11 +275,11 @@ Use publication-figure-forge to turn this R data frame into a journal-ready scat
 - `replication-package-janitor`: prepare and repair reproducibility packages.
 - `academic-paper-pipeline`: topic-manuscript-delivery orchestration. Added.
 - `causal-diagnostics-runner`: deterministic diagnostics for IV, DID, RDD, and event studies.
-- `causal-ml-estimator-selector`: CATE/ITE/uplift estimator choice and validation workflow. Added.
+- `causal-ml-estimator-selector`: CATE/ITE/uplift estimator choice, validation workflow, and boundary checks between treatment-effect estimation and causal-invariant prediction. Added.
 - `stata-econometrics-runner`: Stata `.do`/`.log` workflow for empirical replication. Added.
 - `paper-journalist`: structured writing, contribution framing, and revision response.
 - `publication-figure-forge`: R/ggplot2 journal-ready visualization workflow. Added.
-- `prediction-modeling-forge`: prediction modeling plus bootstrap uncertainty for model-performance intervals and fitted-value uncertainty. Added.
+- `prediction-modeling-forge`: prediction modeling plus bootstrap uncertainty, stable time-series prediction, and distribution-shift validation for model-performance intervals and fitted-value uncertainty. Added.
 - optional deterministic scripts for table matching, code inventory, and output verification.
 
 Companion project:

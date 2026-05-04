@@ -7,8 +7,8 @@ This crosswalk explains how each EmpiriForge skill uses the method sources. It h
 | `academic-paper-pipeline` | Academic writing skill-stack patterns; reproducible manuscript delivery; EmpiriForge/EvidenceForge routing | Creates the topic-manuscript-delivery ledger and routes proposal, writing, analysis, figures, and delivery tasks to the smallest useful skill stack. |
 | `empirical-research-forge` | Scaling Reproducibility; applied econometrics; AEA/DIME transparency | Creates the research ledger, routes to references, separates code execution from causal credibility, and produces audit artifacts. |
 | `econ-identification-skeptic` | Angrist and Pischke; Cunningham; Hernan and Robins; Imbens and Rubin | Forces estimand, variation, assumptions, diagnostics, and non-testable threats to be named before writing becomes polished. |
-| `causal-ml-estimator-selector` | Potential outcomes; heterogeneous treatment effects; CausalML/causal-inference software docs | Selects S/T/X/R/DR learners, uplift methods, IV-style estimators, and validation plans only after design assumptions, feature timing, overlap, and policy use are explicit. |
-| `prediction-modeling-forge` | Predictive modeling practice; tidymodels workflows; bootstrap uncertainty; model-performance validation | Separates training/tuning/test evaluation, reports discrimination and calibration, and uses bootstrap only after choosing the correct resampling unit for coefficients, predictions, AUC, threshold metrics, or fitted-value bands. |
+| `causal-ml-estimator-selector` | Potential outcomes; heterogeneous treatment effects; CausalML/causal-inference software docs; causal-invariant prediction boundary cases | Selects S/T/X/R/DR learners, uplift methods, IV-style estimators, and validation plans only after design assumptions, feature timing, overlap, and policy use are explicit; routes stable prediction to `prediction-modeling-forge` unless a treatment effect is actually defined. |
+| `prediction-modeling-forge` | Predictive modeling practice; tidymodels workflows; bootstrap uncertainty; stable carbon-emission forecasting; model-performance validation | Separates training/tuning/test evaluation, reports discrimination and calibration, uses bootstrap only after choosing the correct resampling unit, and requires out-of-environment validation for cross-region, cross-industry, cross-policy, or future-period prediction claims. |
 | `publication-figure-forge` | Scientific visualization practice; journal figure requirements; R/ggplot2 workflows | Turns analysis outputs into submission-ready figures with explicit font, theme, units, color, export, panel, and reviewer-check requirements. |
 | `stata-econometrics-runner` | Stata replication practice; AEA/DIME reproducibility; applied econometrics; agent workflow setup | Maps `.do` files, runs Stata when available, audits logs and outputs, handles Stata/PDF friction, and routes econometric concerns back to identification review. |
 | `references/economics-workflow.md` | Applied economics paper conventions; impact-evaluation practice | Converts a paper into gates: question, contribution, setting, data, identification, estimation, results, threats, reproducibility. |
@@ -33,6 +33,7 @@ EmpiriForge owns original empirical research workflows:
 - "Which causal-ML estimator family matches this estimand and assignment mechanism?"
 - "Can this figure pass basic journal and reviewer checks?"
 - "How uncertain is this AUC, prediction, fitted curve, or model-performance metric?"
+- "Will this carbon-emission forecast remain stable under new regions, industries, firms, policy phases, or future periods?"
 
 EvidenceForge owns evidence synthesis workflows:
 

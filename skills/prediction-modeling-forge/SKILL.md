@@ -1,6 +1,6 @@
 ---
 name: prediction-modeling-forge
-description: Builds and audits tabular-data prediction-model workflows for research papers. Use for clinical, environmental, biological, social-science, or economics prediction models; tidymodels, random forest, XGBoost, logistic-regression baselines, train/test splits, cross-validation, hyperparameter tuning, ROC/AUC, calibration, decision-curve analysis, bootstrap uncertainty, confidence intervals, prediction bands, variable importance, leakage checks, and manuscript-ready methods/results language.
+description: Builds and audits tabular-data prediction-model workflows for research papers. Use for clinical, environmental, biological, social-science, environmental-economics, or economics prediction models; tidymodels, random forest, XGBoost, logistic-regression baselines, enterprise carbon-emission forecasting, stable time-series prediction, causal-invariant prediction, distribution shift, cross-region/cross-industry/cross-policy validation, train/test splits, cross-validation, hyperparameter tuning, ROC/AUC, calibration, decision-curve analysis, bootstrap uncertainty, confidence intervals, prediction bands, variable importance, leakage checks, and manuscript-ready methods/results language.
 ---
 
 # Prediction Modeling Forge
@@ -24,6 +24,7 @@ Identify:
 - missingness and imputation plan;
 - split strategy;
 - validation target: random future patients, new sites, new years, new regions, or external data;
+- environmental split target: region, industry, firm, policy phase, market regime, year, or site;
 - baseline model;
 - uncertainty target: coefficient, prediction, AUC, calibration, or threshold metric;
 - intended paper claim.
@@ -32,8 +33,10 @@ Load:
 
 - `references/tidymodels-prediction-workflow.md` for the R/tidymodels workflow.
 - `references/bootstrap-uncertainty.md` for bootstrap standard errors, confidence intervals, prediction bands, and model-performance uncertainty.
+- `references/stable-carbon-emission-forecasting.md` for stable time-series prediction under distribution shift, enterprise carbon-emission forecasting, causal-invariant features, adaptive normalization, sample reweighting, and cross-environment validation.
 - `templates/prediction-model-audit.md` for study-level audit.
 - `templates/bootstrap-uncertainty-audit.md` when the user needs confidence intervals, uncertainty bands, or bootstrap robustness checks.
+- `templates/stable-time-series-prediction-audit.md` and `templates/stable-environment-validation-schema.csv` when the claim depends on cross-region, cross-industry, cross-policy, or cross-period generalization.
 - `templates/prediction-model-reporting-checklist.csv` for paper reporting checks.
 - `scripts/tidymodels_binary_classification_template.R` when the user wants a starting R script for binary classification.
 - `scripts/bootstrap_metric_ci.py` when the user has a CSV of values or predictions and wants deterministic bootstrap CIs for means, medians, AUC, or classification metrics.
@@ -42,15 +45,16 @@ Load:
 
 1. Define the prediction target and positive class.
 2. Freeze candidate predictors and remove post-outcome or leakage variables.
-3. Split data before tuning, using stratification for imbalanced binary outcomes.
+3. Split data before tuning, using stratification for imbalanced binary outcomes or group/time/environment splits for distribution-shift claims.
 4. Put preprocessing inside a recipe so it is learned from training folds only.
 5. Compare a simple baseline model, usually logistic regression, against ML models.
 6. Tune random forest and/or XGBoost using resampling inside the training data only.
 7. Use `last_fit()` or an equivalent one-time final test evaluation.
 8. Report discrimination, calibration, classification metrics, and decision utility when appropriate.
-9. Add uncertainty intervals for key estimates using the resampling unit that matches the study design.
-10. Export figures and tables from code.
-11. Write methods and results with the validation design visible.
+9. For stable prediction papers, evaluate out-of-environment performance and feature stability across the claimed shifts.
+10. Add uncertainty intervals for key estimates using the resampling unit that matches the study design.
+11. Export figures and tables from code.
+12. Write methods and results with the validation design visible.
 
 ## Output Modes
 
@@ -87,6 +91,23 @@ Figure/table output:
 Interpretation limit:
 ```
 
+### Stable Time-Series Prediction Audit
+
+```text
+Target series:
+Unit:
+Environment definition:
+Forecast horizon:
+Stable feature candidates:
+Environment-dependent feature candidates:
+Split design:
+Baselines:
+Out-of-environment metrics:
+Feature-stability evidence:
+Distribution-shift correction:
+Interpretation limit:
+```
+
 ### Leakage Audit
 
 Flag:
@@ -100,6 +121,8 @@ Flag:
 - reporting AUC without calibration or threshold-dependent metrics.
 - row-level bootstrap when data are clustered by patient, site, year, school, county, trial, or repeated measurement;
 - bootstrap CIs computed after repeatedly changing the model using the test set.
+- random row splits for panel or time-series studies that claim future, new-region, new-industry, or new-policy generalization;
+- causal-stability language when no environment definition or out-of-environment test is provided.
 
 ### Manuscript Language
 
@@ -122,3 +145,5 @@ Produce concise Methods and Results wording that states:
 - Do not let high AUC override sample-size, class-imbalance, or leakage concerns.
 - Do not use ordinary row bootstrap for dependent data; use cluster, block, stratified, residual, or parametric bootstrap when the design requires it.
 - Do not use bootstrap intervals as a cure for biased sampling, severe leakage, or a nonrepresentative training set.
+- Do not treat "causally stable features" as verified intervention effects unless a separate causal identification design supports that claim.
+- Do not use in-environment accuracy to support cross-environment or future-policy deployment claims.

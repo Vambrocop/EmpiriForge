@@ -16,6 +16,10 @@ calibration,yes,Probability reliability,Results
 decision_curve,conditional,Clinical or operational net-benefit assessment,Results or Supplement
 variable_importance,conditional,Model explanation not mechanism,Results
 external_validation,conditional,Needed for deployment/generalization claims,Methods and Results
+environment_definition,conditional,Required when the claim involves distribution shift or stable prediction,Methods
+out_of_environment_validation,conditional,Required for cross-region cross-industry cross-policy or new-period claims,Methods and Results
+feature_stability_audit,conditional,Separates robust predictive features from environment-specific correlations,Results or Supplement
+deployment_shift_limit,conditional,Explains where the model may fail under new regimes,Discussion
 package_versions_or_session_info,yes,Reproducibility,Methods or Supplement
 random_seed,yes,Reproducibility,Methods or Code
 code_and_data_availability,yes,Auditability,Data/code availability

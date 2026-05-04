@@ -1,6 +1,6 @@
 ---
 name: causal-ml-estimator-selector
-description: Selects, audits, and explains causal machine learning workflows for heterogeneous treatment effects. Use for CATE, ITE, uplift modeling, S/T/X/R/DR learners, causal forests, matching, propensity scores, IV/DRIV, CEVAE/DragonNet, treatment targeting, policy personalization, Python CausalML/EconML-style projects, and validation of causal-ML claims.
+description: Selects, audits, and explains causal machine learning workflows for heterogeneous treatment effects. Use for CATE, ITE, uplift modeling, S/T/X/R/DR learners, causal forests, matching, propensity scores, IV/DRIV, CEVAE/DragonNet, treatment targeting, policy personalization, Python CausalML/EconML-style projects, validation of causal-ML claims, and boundary checks between treatment-effect estimation and causal-invariant/stable prediction.
 ---
 
 # Causal ML Estimator Selector
@@ -44,6 +44,8 @@ Load:
 - `references/causal-ml-toolkit.md` for estimator families, guardrails, and CausalML-specific notes.
 - `templates/causal-ml-design-card.md` for project setup.
 - `templates/causal-ml-validation-plan.csv` for validation planning.
+
+If the project is about stable prediction under distribution shift rather than treatment-effect estimation, route the main workflow to `prediction-modeling-forge` and keep this skill only for causal-language boundary checks.
 
 ## Workflow
 
@@ -115,3 +117,4 @@ Give package-agnostic pseudocode unless the user asks for a specific library.
 - Do not write subgroup effects as confirmatory when they were searched after seeing results.
 - Do not use causal ML to rescue an unidentified observational design.
 - Do not hide package versions, random seeds, train/test logic, or feature construction.
+- Do not treat causal-invariant or stable predictive features as treatment effects unless the project defines a treatment, estimand, and identification strategy.
