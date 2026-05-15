@@ -45,8 +45,10 @@ EmpiriForge/
     academic-paper-pipeline/
       SKILL.md
       references/
+        agricultural-systems-scope-fit.md
         paper-skill-stack.md
       templates/
+        agricultural-systems-scope-fit-audit.md
         paper-production-ledger.md
         submission-delivery-checklist.md
     empirical-research-forge/

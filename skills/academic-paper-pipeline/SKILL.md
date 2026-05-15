@@ -31,7 +31,9 @@ Identify:
 Load:
 
 - `references/paper-skill-stack.md` for external and internal skill routing.
+- `references/agricultural-systems-scope-fit.md` when an agricultural, digital-agriculture, AI, remote-sensing, LCA, farm-systems, or agronomic paper needs a systems-journal scope-fit audit.
 - `templates/paper-production-ledger.md` to track the paper from idea to delivery.
+- `templates/agricultural-systems-scope-fit-audit.md` when judging whether a manuscript has enough system boundary, interaction, trade-off, and decision relevance for an agricultural-systems journal.
 - `templates/submission-delivery-checklist.md` before final submission or defense.
 
 Route internally:
@@ -88,6 +90,10 @@ What to provide:
 What not to ask yet:
 ```
 
+### Agricultural Systems Scope-Fit Audit
+
+Use `templates/agricultural-systems-scope-fit-audit.md` when the paper risks being a tool, model, single-trial, or single-outcome paper rather than a systems paper.
+
 ## Guardrails
 
 - Do not invent citations, results, methods, or journal requirements.
@@ -97,3 +103,4 @@ What not to ask yet:
 - Do not route a meta-analysis to an empirical-paper workflow; use EvidenceForge instead.
 - Do not route identification critique to a generic writing workflow.
 - Do not overinstall skills; choose the few needed for the current stage.
+- Do not call an agricultural manuscript systems-oriented unless it makes the system boundary, interactions, trade-offs, scale, and decision relevance visible.
