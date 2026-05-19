@@ -1,6 +1,6 @@
 # Irrigation Expansion Causal-Forest Paradigm
 
-Source status: main article and Supporting Information reviewed locally from user-provided PDFs. Public data/code entry identified in the article reference list: Zenodo https://doi.org/10.5281/zenodo.17478972. Full Zenodo package inspection still pending.
+Source status: main article, Supporting Information, and the public Zenodo data/code package reviewed. Zenodo record: https://doi.org/10.5281/zenodo.17478972.
 
 Anchor paper:
 
@@ -208,23 +208,102 @@ Minimum diagnostics:
 Verdict:
 
 ```text
-near-rerunnable after Zenodo package inspection
+rerunnable at figure level; analysis-level rerun appears feasible after path edits and R package setup
 ```
 
-What is already clear:
+Zenodo package inspection:
+
+| File | Size | Reproduction role | Local status |
+| --- | ---: | --- | --- |
+| `Deines_etal_2026_EarthsFuture_irrigationExpansion-main.zip` | 27 MB | R Markdown analysis and figure code | downloaded and extracted |
+| `formatted_figureInput.zip` | 139 MB | CSV summaries of causal-forest output for figure reproduction | downloaded, extracted, and path-flattened |
+| `pointSampleMasterData.zip` | 1.81 GB | cleaned point-sample master data for rerunning analyses | downloaded and extracted |
+| `qs.census2017.txt.gz` | 138 MB | full 2017 USDA Census download | available on Zenodo; not required for first causal-forest rerun |
+| `causal_forest_objects.zip` | 21.0 GB | saved intermediate and final model objects | available on Zenodo; optional heavy cache |
+
+Local inspection paths:
+
+```text
+E:\my-projects\Reference Literature\Causal Inference in Machine Learning\Deines_2026_irrigation_zenodo_17478972
+C:\tmp\deines_irrigation_zenodo_17478972
+```
+
+The repository README inside the code package points to a different Zenodo DOI (`10.5281/zenodo.19392391`), but the working public record inspected here is `10.5281/zenodo.17478972`.
+
+What is now clear:
 
 - public source data are named;
-- derived data and analysis code are cited as Zenodo `10.5281/zenodo.17478972`;
-- software stack includes R, `grf`, `earth`, and base `stats::glm`;
+- derived data and analysis code are available from Zenodo `10.5281/zenodo.17478972`;
+- software stack includes R Markdown, `tidyverse`, `grf`, `earth`, `corrplot`, `RColorBrewer`, `readr`, `dplyr`, `ggplot2`, `patchwork`, `ggbiplot`, `geofacet`, `viridis`, `ggforce`, `data.table`, `tidycensus`, and `rnassqs`;
 - SI provides the main variable inventory and a threshold sensitivity check.
+- figure-level reproduction can start from `formatted_figureInput/maize_causalForestOutput_20250206.csv` and `formatted_figureInput/soybeans_causalForestOutput_20250206.csv`;
+- analysis-level reproduction can start from `pointSample_combined_fewerCDL_20240205.rds` or the plain CSV equivalent in `pointSampleMasterData.zip`;
+- sensitivity scripts use `pointSample_combined_fewerCDL_test39px_20260123.rds` and `pointSample_combined_fewerCDL_test100px_20260123.rds`.
 
-What still needs inspection:
+Main code run order:
 
-- actual folder structure in the Zenodo archive;
-- whether all derived point samples are included or must be regenerated from public rasters;
-- exact R script order and random seeds;
-- package versions beyond the named packages;
-- whether figures can be reproduced without large raw raster downloads.
+```text
+00.20_getNASS.Rmd
+00.30_checkNASS_irrigationByCrop.Rmd
+03.00_yieldImpacts_cf.Rmd
+03.50_yieldImpacts_cf_soy.Rmd
+04.00_Fig4_irrigation_likelihood_analysisAndFigure.Rmd
+06.00_Fig1c_Fig2a_irrTrends.Rmd
+06.60_Fig_yieldImpacts.Rmd
+```
+
+Sensitivity scripts:
+
+```text
+03.00_yieldImpacts_cf_test39px.Rmd
+03.00_yieldImpacts_cf_test100px.Rmd
+```
+
+Master-data schema observed from `pointSample_combined_fewerCDL_20240205.csv`:
+
+```text
+107 columns
+geom_id, irr_type, fips5, adoptionYear, distances to stream/water/irrigation,
+state identifiers, soil variables, normalized climate variables, groundwater variables,
+year, crop class, corn/soybean yields, annual LANID status, weather, aridity,
+GLDAS/GRACE-style moisture variables, and water-storage summaries
+```
+
+Figure-output schema observed from the maize/soybean causal-forest CSVs:
+
+```text
+52 columns
+geom_id, uniqueID, irr_type, fips5, adoptionYear, state_name, year, cdl_class,
+Y, W, w_hat, Y_hat, predictions, yield_diff_perc, and selected heterogeneity covariates
+```
+
+Reproduction gates:
+
+| Gate | Status | Notes |
+| --- | --- | --- |
+| Figure reproduction | green | summarized causal-forest CSVs are present; path edits needed |
+| Causal-forest rerun | yellow-green | master RDS/CSV is present; needs R packages and compute time |
+| Sensitivity rerun | yellow-green | 39 px and 100 px RDS files are present |
+| Full raw-raster reconstruction | yellow | public sources are named, but raw raster processing is outside the lightweight package |
+| Precomputed model-object inspection | optional | possible via 21 GB object archive, but not necessary for first replication |
+
+Minimal rerun patch for scripts:
+
+```r
+# replace the author's local path
+dataDir <- "E:/my-projects/Reference Literature/Causal Inference in Machine Learning/Deines_2026_irrigation_zenodo_17478972/pointSampleMasterData"
+
+# or, for figure scripts
+localDir <- "E:/my-projects/Reference Literature/Causal Inference in Machine Learning/Deines_2026_irrigation_zenodo_17478972"
+```
+
+The E-drive extraction now has a direct figure-input path:
+
+```text
+E:\my-projects\Reference Literature\Causal Inference in Machine Learning\Deines_2026_irrigation_zenodo_17478972\formatted_figureInput
+```
+
+Because the code package was written on macOS with long local paths, Windows users may still prefer a short path such as `C:\tmp\deines_irrigation_zenodo_17478972` when knitting R Markdown.
 
 ## Identification Risks
 
