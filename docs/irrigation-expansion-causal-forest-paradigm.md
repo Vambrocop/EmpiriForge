@@ -1,6 +1,6 @@
 # Irrigation Expansion Causal-Forest Paradigm
 
-Source status: user-provided article summary; full-text and data/code audit pending.
+Source status: main article and Supporting Information reviewed locally from user-provided PDFs. Public data/code entry identified in the article reference list: Zenodo https://doi.org/10.5281/zenodo.17478972. Full Zenodo package inspection still pending.
 
 Anchor paper:
 
@@ -32,15 +32,57 @@ remote sensing treatment map
 | --- | --- |
 | Research question | Where is irrigation expanding in the traditionally rainfed US Corn Belt, and how much does irrigation change corn and soybean yields? |
 | Region | Illinois, Indiana, Iowa, Michigan, Minnesota, Ohio, and Wisconsin |
-| Unit | Spatial sample locations / pixels, reportedly 101,240 locations |
+| Unit | Spatial sample locations / pixels; 101,240 locations before crop-year expansion |
 | Period | LANID irrigation maps, 1997-2017 |
 | Treatment | Irrigation status, especially expansion irrigation versus rainfed comparison |
-| Treatment classes | Existing irrigation, expansion irrigation, rainfed |
+| Treatment classes | Pre-existing irrigation, expanding irrigation, random rainfed, proximity-paired rainfed |
 | Outcomes | Satellite-derived corn and soybean yields from SCYM-style yield maps |
 | Covariates | Weather, climate water balance, soils, terrain, groundwater, and other environmental variables |
 | Adoption model | Logistic regression for correlates of irrigation expansion |
-| Effect model | Causal forest estimating `ATE` and heterogeneous treatment effects |
+| Effect model | `grf` causal forest estimating overlap-weighted `ATE` and heterogeneous treatment effects |
 | Main empirical claim type | Conditional effect of irrigation on crop yield under observed-confounder adjustment |
+
+## What The Paper Actually Does
+
+The paper is stronger than a generic "AI + agriculture" example because it makes the treatment map, outcome map, sampling design, treatment-propensity logic, and heterogeneity analysis explicit.
+
+Key implementation facts from the article and SI:
+
+- LANID provides annual 30 m irrigation maps for 1997-2017.
+- Pixels irrigated at least once in 1997-1999 are treated as pre-existing irrigation.
+- Single-year irrigated pixels are removed to reduce spurious classifications.
+- Expanding irrigation is defined as connected new-irrigation groups first irrigated in 2000 or later.
+- The main expanding-irrigation threshold is more than 75 connected pixels, about 6.75 ha.
+- The SI tests 39, 75, and 100 pixel thresholds; maize ATE stays around 1.51-1.54 t/ha.
+- The analysis uses 28,120 expanding-irrigation field-like entities, 15,000 pre-existing irrigation pixels, 30,000 random rainfed pixels, and 28,120 proximity-paired rainfed pixels.
+- Proximity-paired rainfed controls are 1,000-4,000 m from an expanding-irrigation observation.
+- Causal forests are run separately for maize and soybean using R `grf`.
+- The causal forest uses 2,000 trees and `grf`'s doubly robust treatment-effect calculation.
+- Propensity scores are modeled with `grf::regression_forest` using static covariates.
+- Observations with propensity below 0.02 or above 0.98 are removed for overlap.
+- Expected-yield submodels are random-forest yield models after MARS variable selection with the R `earth` package.
+- Heterogeneity is tested with `grf::test_calibration`.
+- The paper reports both t/ha effects and percent yield changes.
+
+Final causal-forest samples after overlap trimming:
+
+| Crop | Irrigated observations | Rainfed observations |
+| --- | ---: | ---: |
+| Maize | 135,566 | 211,870 |
+| Soybean | 78,562 | 176,151 |
+
+Reported average treatment effects:
+
+| Crop | ATE | Percent effect |
+| --- | ---: | ---: |
+| Maize | 1.53 t/ha, 95% CI [1.49, 1.56] | 12.6% |
+| Soybean | 0.29 t/ha, 95% CI [0.28, 0.30] | 7.9% |
+
+Important heterogeneity examples:
+
+- Maize treatment effects are larger on poorer soils and under higher August vapor pressure deficit.
+- When August VPD reaches 2-2.5 kPa, reported CATE reaches about 32% for maize and 10% for soybeans, but this condition is rare in the study period.
+- Iowa, Illinois, and Indiana have lower state-level effects than several marginal or more water-limited states.
 
 ## Data Inventory To Reconstruct
 
@@ -55,6 +97,8 @@ The reproduction package should record exact URLs, versions, and spatial/tempora
 - POLARIS soils;
 - topography and elevation variables;
 - groundwater depth or groundwater-relevant indicators;
+- NASA GRACE root-zone soil moisture;
+- MERIT Hydro distance to streams and permanent water;
 - state boundaries and crop masks;
 - crop calendars and year-specific crop identity.
 
@@ -104,9 +148,12 @@ rainfed: never observed as irrigated during the analysis window
 
 Record:
 
-- minimum years required to call a location rainfed;
-- whether temporary irrigation is allowed;
-- whether treatment year is first irrigated year or ever-irrigated status;
+- 1997-1999 buffer for pre-existing irrigation;
+- removal of one-year-only irrigated pixels;
+- more than 75 connected pixels as the main expanding-irrigation field threshold;
+- 2000 or later as the first-year-irrigated cutoff for expansion;
+- never-irrigated status in LANID for rainfed controls;
+- 1,000-4,000 m proximity-pair rule for local rainfed controls;
 - whether post-treatment covariates are excluded from the causal model.
 
 ### 3. Adoption / Expansion Model
@@ -140,17 +187,44 @@ Candidate implementations:
 - Python: `econml.dml.CausalForestDML`;
 - Python: `causalml` tree/forest family where appropriate.
 
+For reproducing this paper specifically, start with R `grf`, because the article names `grf::regression_forest`, `grf::causal_forest`, and `grf::test_calibration`.
+
 Minimum diagnostics:
 
 - treatment prevalence by state/crop/year;
 - propensity or overlap distribution;
+- propensity trimming at 0.02 and 0.98;
 - balance before and after weighting/forest residualization;
 - honest forest or sample-splitting settings;
 - spatial cluster robustness;
 - spatial block sensitivity;
 - separate corn and soybean models;
+- threshold sensitivity for expanding-irrigation field size;
 - drought-year or water-stress-year heterogeneity;
 - placebo outcome or placebo treatment where feasible.
+
+## Reproduction Status
+
+Verdict:
+
+```text
+near-rerunnable after Zenodo package inspection
+```
+
+What is already clear:
+
+- public source data are named;
+- derived data and analysis code are cited as Zenodo `10.5281/zenodo.17478972`;
+- software stack includes R, `grf`, `earth`, and base `stats::glm`;
+- SI provides the main variable inventory and a threshold sensitivity check.
+
+What still needs inspection:
+
+- actual folder structure in the Zenodo archive;
+- whether all derived point samples are included or must be regenerated from public rasters;
+- exact R script order and random seeds;
+- package versions beyond the named packages;
+- whether figures can be reproduced without large raw raster downloads.
 
 ## Identification Risks
 
@@ -164,6 +238,7 @@ This design can be powerful, but the causal language needs guardrails.
 | Measurement error | Remote-sensed irrigation and yield products are model outputs | Validate against survey/ground truth if possible |
 | Dynamic treatment | First irrigation year, persistent irrigation, and intermittent irrigation differ | Make exposure definition explicit |
 | Heterogeneity mining | Causal forests can find unstable subgroups | Report stability and avoid overclaiming small segments |
+| Scale mismatch | 30 m LANID/SCYM data are combined with 4 km, 14 km, 90 m, and 250 m covariates | Record native resolution and extraction rule |
 
 ## Skill Rule To Reuse
 

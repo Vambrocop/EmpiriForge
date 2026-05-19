@@ -124,7 +124,7 @@ Do not rely on old paper metadata for current installation constraints; check of
 
 ## Remote-Sensing Agricultural Treatment Effects
 
-Use this pattern when a paper combines remote-sensed treatment maps, spatial crop-yield products, environmental covariates, and causal forests. Deines et al., *Irrigation Expansion in the US Corn Belt: Patterns and Yield Impacts* (*Earth's Future*, DOI: https://doi.org/10.1029/2025EF007566; source audit pending), is a useful article paradigm.
+Use this pattern when a paper combines remote-sensed treatment maps, spatial crop-yield products, environmental covariates, and causal forests. Deines et al., *Irrigation Expansion in the US Corn Belt: Patterns and Yield Impacts* (*Earth's Future*, DOI: https://doi.org/10.1029/2025EF007566; main article and SI reviewed locally, data/code cited at Zenodo https://doi.org/10.5281/zenodo.17478972), is a useful article paradigm.
 
 Minimum audit fields:
 
