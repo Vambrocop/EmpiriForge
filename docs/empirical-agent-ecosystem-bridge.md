@@ -9,6 +9,7 @@ This note records how EmpiriForge should relate to external empirical-research a
 | [`Awesome-Agent-Skills-for-Empirical-Research`](https://github.com/brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research) | Discovery index for empirical-research skills across social-science workflows | Use for scouting, comparison, and finding candidate skill patterns. Do not vendor the whole collection into EmpiriForge. |
 | [`CoPaper.AI`](https://copaper.ai) | Hosted AI empirical-research product | Use as a reference point for what an end-to-end empirical workflow product can look like. Do not treat as an open reproducibility backend unless outputs and code are exported. |
 | [`StatsPAI`](https://github.com/brycewang-stanford/StatsPAI) | Python package for causal inference and applied econometrics | Use as an optional execution engine for empirical examples, with pinned versions, captured outputs, and independent validation against R/Stata where possible. |
+| [`nature-skills`](https://github.com/Yuan1z0825/nature-skills) | Nature-style academic reading, writing, citation, figure, data-availability, reviewer-response, and paper-to-PPT skill collection | Use as a publication-facing companion to EmpiriForge. Install as external skills; do not vendor the whole repository. |
 
 ## Relationship To EmpiriForge
 
@@ -23,6 +24,24 @@ research ledger
 ```
 
 External skill collections are useful, but they should not blur EmpiriForge's boundary.
+
+`nature-skills` should be treated as a companion layer:
+
+```text
+EmpiriForge: identification, empirical design, reproducibility, research ledger
+nature-skills: reading, polishing, figures, citation support, response letters, PPT
+```
+
+Useful installed skills:
+
+- `nature-reader` for full-paper bilingual Markdown reading;
+- `nature-writing` and `nature-polishing` for manuscript prose;
+- `nature-citation` for citation support;
+- `nature-data` for Data Availability statements;
+- `nature-response` for reviewer response letters;
+- `nature-paper2ppt` for journal-club decks;
+- `nature-figure` for high-impact figure styling;
+- `nature-academic-search` for literature search workflows.
 
 ## Why Not Copy Everything
 
