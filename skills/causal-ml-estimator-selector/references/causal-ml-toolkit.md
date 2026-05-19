@@ -121,3 +121,19 @@ git commit
 ```
 
 Do not rely on old paper metadata for current installation constraints; check official docs for the active version.
+
+## Remote-Sensing Agricultural Treatment Effects
+
+Use this pattern when a paper combines remote-sensed treatment maps, spatial crop-yield products, environmental covariates, and causal forests. Deines et al., *Irrigation Expansion in the US Corn Belt: Patterns and Yield Impacts* (*Earth's Future*, DOI: https://doi.org/10.1029/2025EF007566; source audit pending), is a useful article paradigm.
+
+Minimum audit fields:
+
+- treatment map source and classification rule;
+- treatment timing;
+- outcome map source;
+- pre-treatment environmental covariates;
+- overlap diagnostics;
+- causal-forest implementation and honesty/sample-splitting settings;
+- spatial autocorrelation and cluster robustness;
+- heterogeneity stability;
+- limits around hidden selection, remote-sensing error, and spatial interference.

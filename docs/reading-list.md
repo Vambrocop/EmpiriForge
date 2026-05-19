@@ -42,6 +42,7 @@ Use these as ecosystem references. Verify repository structure before installing
 - CausalML GitHub repository: https://github.com/uber/causalml
 - Künzel, Sekhon, Bickel, and Yu, meta-learners for estimating heterogeneous treatment effects.
 - Nie and Wager, quasi-oracle estimation of heterogeneous treatment effects.
+- Deines et al., *Irrigation Expansion in the US Corn Belt: Patterns and Yield Impacts*, *Earth's Future*, DOI: https://doi.org/10.1029/2025EF007566. Use as a remote-sensing plus causal-forest agricultural adaptation paradigm; source audit pending.
 
 ## Reproducibility and Transparency
 
