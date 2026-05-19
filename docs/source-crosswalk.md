@@ -12,6 +12,7 @@ This crosswalk explains how each EmpiriForge skill uses the method sources. It h
 | `publication-figure-forge` | Scientific visualization practice; journal figure requirements; R/ggplot2 workflows; corrplot correlation matrices | Turns analysis outputs into submission-ready figures with explicit font, theme, units, color, export, panel, correlation method, p-value correction, and reviewer-check requirements. |
 | `stata-econometrics-runner` | Stata replication practice; AEA/DIME reproducibility; applied econometrics; agent workflow setup | Maps `.do` files, runs Stata when available, audits logs and outputs, handles Stata/PDF friction, and routes econometric concerns back to identification review. |
 | `docs/knowledge-graph-navigation.md` | Graphify-style repository and corpus graph navigation | Uses `GRAPH_REPORT.md` and focused graph queries to locate relevant scripts, notes, tables, figures, and method references before raw file reading; does not judge identification, reproducibility, prediction validity, or causality. |
+| `docs/empirical-agent-ecosystem-bridge.md` | External empirical-agent ecosystem: Awesome-Agent-Skills, CoPaper.AI, StatsPAI | Keeps external tools discoverable while preserving EmpiriForge's boundary: research ledger, identification audit, deterministic execution, reproducibility package, and human judgment. |
 | `references/economics-workflow.md` | Applied economics paper conventions; impact-evaluation practice | Converts a paper into gates: question, contribution, setting, data, identification, estimation, results, threats, reproducibility. |
 | `references/identification-checklist.md` | DID/IV/RDD/synthetic-control/matching/causal-ML methods | Maps each design to its core assumptions, diagnostics, and reviewer pressure points. |
 | `references/reproducibility-package.md` | AEA Data and Code Policy; DIME Analytics; J-PAL data publication | Defines a minimum replication-package structure, README expectations, restricted-data handling, and output verification. |
@@ -37,6 +38,7 @@ EmpiriForge owns original empirical research workflows:
 - "Can this correlation matrix show associations clearly without overclaiming causality?"
 - "How uncertain is this AUC, prediction, fitted curve, or model-performance metric?"
 - "Will this carbon-emission forecast remain stable under new regions, industries, firms, policy phases, or future periods?"
+- "Can an external Python empirical engine such as StatsPAI run the analysis while EmpiriForge still owns identification and reproducibility review?"
 
 EvidenceForge owns evidence synthesis workflows:
 

@@ -11,6 +11,7 @@ Use this reference when the user asks where EmpiriForge's workflow comes from, o
 | Causal inference | counterfactual language, assumptions, target-trial thinking, treatment timing, selection bias | hiding weak data behind formal language |
 | Research transparency | data/code access, README, environment, deviations, logs, restricted data | proving that the estimate is unbiased |
 | Impact-evaluation practice | field implementation, randomization, data quality, attrition, compliance, ethical constraints | generalizing beyond the study context without argument |
+| External empirical-agent ecosystems | discovery of reusable skills, optional execution engines such as StatsPAI, comparison with hosted products such as CoPaper.AI | replacing local identification review, security review, version pinning, or replication-package discipline |
 
 ## Practical Mapping
 
@@ -18,6 +19,7 @@ Use this reference when the user asks where EmpiriForge's workflow comes from, o
 - If the task is "Can someone rerun my result?", use reproducibility and transparency sources.
 - If the task is "Can an AI agent help repeatedly?", use the AI-assisted workflow source.
 - If the task is "Can this policy evaluation be implemented credibly?", use impact-evaluation practice sources.
+- If the task is "Can an external empirical agent tool help?", use the external ecosystem as a candidate execution layer while keeping EmpiriForge's research ledger and audit gates.
 
 ## Citation Discipline
 

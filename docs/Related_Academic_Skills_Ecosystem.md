@@ -5,7 +5,9 @@ This note records the surrounding skill ecosystem as of 2026-04-28. It helps pos
 ## Economics and Social Science
 
 - [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill): economics writing skill covering introductions, empirical results, replication standards, LaTeX, identification strategies, and review checklists.
-- [`brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research`](https://github.com/brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research): curated map of empirical research agent skills across social-science disciplines.
+- [`brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research`](https://github.com/brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research): curated map of empirical research agent skills across social-science disciplines. Use it as an external discovery index, not as a bundle to vendor wholesale into EmpiriForge.
+- [`brycewang-stanford/StatsPAI`](https://github.com/brycewang-stanford/StatsPAI): MIT-licensed Python toolkit for agent-native causal inference and applied econometrics, with structured result objects and R/Stata parity-validation claims. Treat as a candidate execution engine that still needs independent version pinning, numerical validation, and identification review.
+- [`CoPaper.AI`](https://copaper.ai): hosted empirical-research AI workflow product reportedly powered by StatsPAI. Treat as a product/ecosystem reference, not as an open reproducibility dependency unless code and outputs are exported.
 - [`Imbad0202/academic-research-skills`](https://github.com/Imbad0202/academic-research-skills): academic research pipeline from research to writing, review, revision, and finalization.
 
 ## Life Sciences, Genomics, Omics
@@ -43,4 +45,5 @@ EmpiriForge can differentiate by combining:
 - reproducibility-first package checks;
 - method-source alignment;
 - skill creation from papers and research traces;
+- optional bridges to external ecosystems such as Awesome-Agent-Skills, StatsPAI, CoPaper.AI, Stata, R, and Python;
 - a clear bridge to EvidenceForge for systematic review and meta-analysis.

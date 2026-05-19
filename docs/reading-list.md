@@ -20,6 +20,8 @@ This reading list is intentionally short. EmpiriForge should stay useful as a wo
 - ndpvt-web/latex-document-skill: https://github.com/ndpvt-web/latex-document-skill
 - tfriedel/claude-office-skills: https://github.com/tfriedel/claude-office-skills
 - safishamsi/graphify: https://github.com/safishamsi/graphify
+- brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research: https://github.com/brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research
+- CoPaper.AI: https://copaper.ai
 
 Use these as ecosystem references. Verify repository structure before installing because third-party skill layouts can change.
 
@@ -40,6 +42,7 @@ Use these as ecosystem references. Verify repository structure before installing
 - Zhao and Liu, *Causal ML: Python package for causal inference machine learning*: https://doi.org/10.1016/j.softx.2022.101294
 - CausalML documentation: https://causalml.readthedocs.io/
 - CausalML GitHub repository: https://github.com/uber/causalml
+- StatsPAI: https://github.com/brycewang-stanford/StatsPAI
 - Künzel, Sekhon, Bickel, and Yu, meta-learners for estimating heterogeneous treatment effects.
 - Nie and Wager, quasi-oracle estimation of heterogeneous treatment effects.
 - Deines et al., *Irrigation Expansion in the US Corn Belt: Patterns and Yield Impacts*, *Earth's Future*, DOI: https://doi.org/10.1029/2025EF007566. Use as a remote-sensing plus causal-forest agricultural adaptation paradigm; source audit pending.

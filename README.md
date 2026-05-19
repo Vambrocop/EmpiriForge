@@ -195,6 +195,7 @@ See:
 - [Stata Agent Workflow](docs/stata-agent-workflow.md)
 - [Knowledge Graph Navigation](docs/knowledge-graph-navigation.md)
 - [Irrigation Expansion Causal-Forest Paradigm](docs/irrigation-expansion-causal-forest-paradigm.md)
+- [Empirical Agent Ecosystem Bridge](docs/empirical-agent-ecosystem-bridge.md)
 
 The repository does not replace econometrics textbooks, journal policies, or human peer review. Its purpose is to make those standards easier to apply repeatedly.
 
