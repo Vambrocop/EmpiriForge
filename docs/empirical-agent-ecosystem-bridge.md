@@ -10,6 +10,7 @@ This note records how EmpiriForge should relate to external empirical-research a
 | [`CoPaper.AI`](https://copaper.ai) | Hosted AI empirical-research product | Use as a reference point for what an end-to-end empirical workflow product can look like. Do not treat as an open reproducibility backend unless outputs and code are exported. |
 | [`StatsPAI`](https://github.com/brycewang-stanford/StatsPAI) | Python package for causal inference and applied econometrics | Use as an optional execution engine for empirical examples, with pinned versions, captured outputs, and independent validation against R/Stata where possible. |
 | [`nature-skills`](https://github.com/Yuan1z0825/nature-skills) | Nature-style academic reading, writing, citation, figure, data-availability, reviewer-response, and paper-to-PPT skill collection | Use as a publication-facing companion to EmpiriForge. Install as external skills; do not vendor the whole repository. |
+| [`academic-research-skills`](https://github.com/Imbad0202/academic-research-skills) / [`academic-research-skills-codex`](https://github.com/Imbad0202/academic-research-skills-codex) | Broad academic research-to-publication pipeline for Claude Code and Codex | Use as a broad orchestration, Socratic planning, paper drafting, and reviewer-simulation companion. Keep EmpiriForge in charge of identification and reproducibility gates. |
 
 ## Relationship To EmpiriForge
 
@@ -42,6 +43,23 @@ Useful installed skills:
 - `nature-paper2ppt` for journal-club decks;
 - `nature-figure` for high-impact figure styling;
 - `nature-academic-search` for literature search workflows.
+
+`academic-research-suite` should be treated as a broader planning and pipeline layer:
+
+```text
+academic-research-suite: Socratic topic refinement, broad research planning, drafting pipeline, reviewer simulation
+EmpiriForge: estimand, identification strategy, empirical design, code/data reproducibility, interpretation limits
+```
+
+Useful ARS routes:
+
+- `deep-research` for research-question narrowing and literature review planning;
+- `academic-paper` for outline and drafting support;
+- `academic-paper-reviewer` for simulated peer review;
+- `academic-pipeline` for end-to-end staged workflow;
+- `experiment-agent` for experiment planning and reproducibility validation in the Codex-native suite.
+
+Because ARS is licensed CC BY-NC 4.0 and is broad in scope, prefer external installation and citation rather than copying its full content into EmpiriForge.
 
 ## Why Not Copy Everything
 
